@@ -245,30 +245,50 @@ def test_same_role_twice_sent_once(env):
     assert sum("Turkish linguistic expert" in m for m in tg.msgs) == 1
 
 
-def test_gemini_model_fallback(monkeypatch):
+def _resp(code, text):
     import requests
 
+    r = requests.Response()
+    r.status_code = code
+    r._content = text.encode()
+    return r
+
+
+OK_BODY = '{"candidates":[{"content":{"parts":[{"text":"{\\"results\\":[{\\"id\\":\\"S::1\\",\\"score\\":70,\\"reason\\":\\"ok\\"}]}"}]}}]}'
+
+
+def test_gemini_model_fallback(monkeypatch):
     tried = []
+    answers = [
+        _resp(404, "model not found"),
+        _resp(429, '{"error":{"message":"Quota exceeded, limit: 0"}}'),
+        _resp(200, OK_BODY),
+    ]
 
     def fake_post(url, body, headers=None, timeout=None):
         tried.append(url.split("/models/")[1].split(":")[0])
-        if len(tried) == 1:
-            r = requests.Response()
-            r.status_code = 404
-            raise requests.HTTPError("404 model not found", response=r)
-        return {"candidates": [{"content": {"parts": [{"text": '{"results":[{"id":"S::1","score":70,"reason":"ok"}]}'}]}}]}
+        return answers.pop(0)
 
-    monkeypatch.setattr(llm.net, "post_json", fake_post)
+    monkeypatch.setattr(llm.net, "post_raw", fake_post)
+    monkeypatch.setattr(llm.time, "sleep", lambda s: None)
     cfg = {"provider": "gemini", "api_key": "k"}
     j = J()
     llm.score([j], "cv", PROFILE, cfg)
-    assert j.score == 70 and tried[0] == "gemini-flash-latest" and cfg["model"] == tried[1]
+    assert j.score == 70
+    assert len(tried) == 3 and cfg["model"] == tried[2]
+
+
+def test_gemini_waits_on_minute_limit(monkeypatch):
+    answers = [_resp(429, '{"retryDelay": "7s"}'), _resp(200, OK_BODY)]
+    slept = []
+    monkeypatch.setattr(llm.net, "post_raw", lambda *a, **k: answers.pop(0))
+    monkeypatch.setattr(llm.time, "sleep", slept.append)
+    j = J()
+    llm.score([j], "cv", PROFILE, {"provider": "gemini", "api_key": "k"})
+    assert j.score == 70 and slept == [8.0]
 
 
 def test_llm_error_text_is_kept(monkeypatch):
-    def boom(*a, **k):
-        raise RuntimeError("API key not valid")
-
-    monkeypatch.setattr(llm.net, "post_json", boom)
+    monkeypatch.setattr(llm.net, "post_raw", lambda *a, **k: _resp(400, "API key not valid"))
     with pytest.raises(RuntimeError, match="API key not valid"):
         llm.score([J()], "cv", PROFILE, {"provider": "gemini", "api_key": "k"})

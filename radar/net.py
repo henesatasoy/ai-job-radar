@@ -82,3 +82,10 @@ def get_text(url: str, **kw) -> str:
     if not r.encoding or r.encoding.lower() == "iso-8859-1":
         r.encoding = r.apparent_encoding or "utf-8"
     return r.text
+
+
+def post_raw(url: str, payload, *, headers=None, timeout=DEFAULT_TIMEOUT) -> requests.Response:
+    """POST without automatic retries. The caller reads status codes itself (used for LLM APIs)."""
+    h = {"Accept": "application/json", "Content-Type": "application/json"}
+    h.update(headers or {})
+    return requests.post(url, json=payload, headers=h, timeout=_t(timeout))
