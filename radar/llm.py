@@ -140,9 +140,9 @@ def _call_gemini(cfg: dict, prompt: str) -> str:
     for model in models:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
         r = _post_with_wait(url, body, headers)
-        if r.status_code in (404, 429):
+        if r.status_code in (404, 429, 500, 502, 503, 504):
             errors.append(f"{model} {_short(r)}")
-            continue  # model missing or out of quota, try the next one
+            continue  # model missing, out of quota or overloaded, try the next one
         if r.status_code >= 400:
             raise LLMError(f"{model} {_short(r)}")
         cfg["model"] = model  # stick with the model that worked

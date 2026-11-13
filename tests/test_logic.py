@@ -260,7 +260,7 @@ OK_BODY = '{"candidates":[{"content":{"parts":[{"text":"{\\"results\\":[{\\"id\\
 def test_gemini_model_fallback(monkeypatch):
     tried = []
     answers = [
-        _resp(404, "model not found"),
+        _resp(503, "model overloaded"),
         _resp(429, '{"error":{"message":"Quota exceeded, limit: 0"}}'),
         _resp(200, OK_BODY),
     ]
