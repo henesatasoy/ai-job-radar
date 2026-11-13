@@ -1,0 +1,108 @@
+# Filtre ayarları
+# Bu dosya public repoda görünür. Gizli kalmasını istediğin bir şey varsa
+# aynı formatta GitHub Secret olarak PROFILE_YAML adıyla ekle, bu dosyanın üstüne yazılır.
+# CV buraya YAZILMAZ, CV_TEXT secret'ına girer.
+
+# ---- Enes dolduracak ----
+min_hourly_usd: null        # örn 20. Saatlik ücret yazan ve bunun altında kalan ilanlar elenir. null = kapalı
+min_score: 60               # Yapay zeka puanı (0-100) bu sayının altındaysa bildirim gelmez
+languages: [Turkish, English]
+interests: |
+  (CV gelince doldurulacak) Örnek
+  AI training, RLHF, model evaluation, Turkish language tasks, red teaming, prompt writing
+avoid: |
+  (isteğe bağlı) Örnek
+  Tamamen ofiste olan işler, sadece ABD'de oturanlara açık işler
+
+# ---- Kelime filtresi (yapay zekadan önce çalışır, ücretsiz) ----
+
+# Başlıkta veya konumda geçerse her zaman bildirilir
+always_include: [turkish, türkçe, turkey, türkiye, istanbul]
+
+# İlgi kelimeleri. Yapay zeka kapalıyken sadece bunlardan biri geçen ilanlar gelir.
+# AI lab kaynaklarında (require_include) başlıkta bunlardan biri olmak zorunda.
+include:
+  - ai trainer
+  - ai tutor
+  - trainer
+  - tutor
+  - annotat
+  - labeler
+  - labeling
+  - rater
+  - evaluator
+  - evaluation
+  - rlhf
+  - prompt
+  - red team
+  - linguist
+  - language specialist
+  - language expert
+  - native
+  - localization
+  - translator
+  - transcri
+  - writer
+  - reviewer
+  - quality analyst
+  - human data
+  - generalist
+  - freelance
+  - contractor
+
+# Başlıkta geçerse direkt elenir
+exclude_title:
+  - account executive
+  - sales
+  - recruiter
+  - talent acquisition
+  - marketing
+  - accountant
+  - finance manager
+  - payroll
+  - legal counsel
+  - attorney
+  - executive assistant
+  - office manager
+  - vice president
+  - head of
+  - director
+  - physician
+  - nurse
+  - in-person
+  - in person
+
+location:
+  # Konumda veya açıklamanın başında geçerse elenir
+  block:
+    - us only
+    - u.s. only
+    - usa only
+    - united states only
+    - us residents only
+    - must reside in the us
+    - must reside in the united states
+    - must be located in the us
+    - must be based in the us
+    - canada only
+    - uk only
+    - onsite only
+    - on-site only
+    - in-person study
+  allowed_only_if_remote: true
+  onsite_words: [on-site, onsite, in office, in-office, hybrid]
+  remote_words: [remote, anywhere, worldwide, global]
+  ok_places: [turkey, türkiye, istanbul, emea, europe, worldwide, anywhere, global]
+
+skip_reposts: false   # true yaparsan son 30 günde aynı başlıkla açılmış ilanlar gelmez
+
+rules:
+  max_age_days: 10            # yayın tarihi bundan eskiyse bildirme (tarih veren kaynaklarda)
+  max_messages_per_run: 12    # fazlası tek bir liste mesajında gelir
+  max_page_fetches: 25        # her turda en fazla kaç ilan sayfası açılsın
+  daily_report_hour: 10       # Türkiye saatiyle günlük durum mesajı
+  alert_after_failures: 16    # bir kaynak bu kadar tur üst üste bozulursa (yaklaşık 4 saat) haber ver
+  reset_min_new: 40           # bir kaynakta bir anda bu kadar yeni ilan çıkarsa site değişmiş say
+  repost_window_days: 30
+  forget_after_days: 60
+  llm_desc_chars: 1500

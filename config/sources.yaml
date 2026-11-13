@@ -1,0 +1,212 @@
+# Takip edilen kaynaklar
+#
+# Her kaynakta
+#   name     mesajda görünen isim (benzersiz olmalı)
+#   type     greenhouse | lever | ashby | workable | recruitee | rippling | workday | sitemap | html | auto
+#   enabled  false yaparsan o kaynak atlanır
+#   enrich   true ise yeni ilanın sayfası açılıp açıklaması okunur (başlık eksikse veya puanlama için)
+#   require_include  true ise başlıkta profile.yaml içindeki "include" kelimelerinden biri olmalı
+#                    (çok farklı rol açan büyük şirketler için)
+#
+# Yeni bir kaynak ilk kez okunduğunda mevcut ilanların hepsi "görüldü" sayılır, bildirim gelmez.
+# Sonraki turlarda sadece yeni çıkanlar gelir.
+
+defaults:
+  enabled: true
+
+sources:
+
+  # ---------------- AI eğitim platformları ----------------
+
+  - name: Mercor
+    type: sitemap
+    url: https://work.mercor.com/sitemap.xml
+    include: '/jobs/list_[^/]+/[^/?#]+'
+    title_from: slug
+    enrich: true
+
+  - name: micro1
+    type: sitemap
+    url: https://jobs.micro1.ai/sitemap.xml
+    include: '/post/[0-9a-f-]{36}'
+    title_from: page
+    enrich: true
+
+  - name: Alignerr
+    type: greenhouse
+    slug: alignerr
+
+  - name: Invisible
+    type: greenhouse
+    slug: agency
+    eu: true
+
+  - name: Invisible (US)
+    company: Invisible
+    type: greenhouse
+    slug: invisibletech
+
+  - name: Mindrift
+    type: workable
+    slug: toloka-ai
+
+  - name: Innodata
+    type: greenhouse
+    slug: innodatainc
+
+  - name: Terac
+    type: html
+    url: https://terac.com/opportunities
+    link: 'terac\.com/opportunities/[^/?#]+/?$'
+    enrich: true
+
+  - name: AnyoneAI
+    type: html
+    url: https://jobs.anyoneai.com
+    link: '/jobs/[0-9a-f-]{36}'
+    pages: 10
+    enrich: true
+
+  - name: Alpheva
+    type: html
+    url: https://alpheva.ai/jobs/
+    page_url: 'https://alpheva.ai/jobs/page/{n}/'
+    pages: 20
+    link: 'alpheva\.ai/jobs/[0-9a-f-]{36}'
+    enrich: true
+
+  - name: Claru
+    type: html
+    url: https://claru.ai/jobs
+    link: 'claru\.ai/jobs/[^/?#]+/?$'
+    enrich: true
+
+  - name: Perle
+    type: rippling
+    slug: perle
+
+  - name: Snorkel
+    type: greenhouse
+    slug: snorkelai
+
+  - name: OpenTrain
+    type: html
+    urls:
+      - https://www.opentrain.ai/jobs/language/tr/
+      - https://www.opentrain.ai/jobs/country/turkiye/
+    pages: 6
+    link: '/jobs/[^/]+--[^/]+/?$'
+    id_regex: '--([^/?#]+)/?$'
+    enrich: true
+
+  - name: AfterQuery
+    type: ashby
+    slug: afterquery
+
+  # Herkese açık ilan listesi yok, sadece kayıt sayfası var. Bulunursa açarız.
+  - name: Turing
+    enabled: false
+    type: html
+    url: https://www.turing.com/jobs
+    link: 'NO_PUBLIC_LIST'
+
+  - name: Remo Experts
+    enabled: false   # sayfa tarayıcıda JavaScript ile yükleniyor
+    type: html
+    url: https://www.rex.zone/open-opportunities
+    link: 'rex\.zone/open-opportunities/[^/?#]+'
+
+  - name: SME Careers
+    enabled: false   # sayfa tarayıcıda JavaScript ile yükleniyor
+    type: html
+    url: https://sme.careers
+    link: 'sme\.careers/[^/?#]*job'
+
+  - name: Sovrano
+    enabled: false   # ilanlar giriş yapınca görünüyor
+    type: html
+    url: https://app.sovrano.ai
+    link: 'NO_PUBLIC_LIST'
+
+  # ---------------- Dil ve yerelleştirme şirketleri ----------------
+
+  - name: Appen
+    type: lever
+    slug: appen
+
+  - name: RWS
+    type: lever
+    slug: rws
+
+  - name: Welo Data
+    type: lever
+    slug: weloglobal
+
+  - name: Wing Data
+    type: lever
+    slug: getwingapp
+
+  - name: DataForce
+    type: recruitee
+    slug: dataforce
+
+  - name: Sigma AI
+    type: html
+    url: https://careers.sigma.ai/jobs
+    link: 'careers\.sigma\.ai/jobs/\d+'
+    id_regex: '/jobs/(\d+)'
+    enrich: true
+
+  - name: Centific
+    type: workday
+    host: centific.wd1.myworkdayjobs.com
+    tenant: centific
+    site: Centific_Global
+
+  # Hangi sistemi kullandıkları belli değil. Bot her gün bu isimleri
+  # Greenhouse, Lever, Ashby, Workable ve Recruitee'de dener, bulursa kendisi kaydeder.
+  - name: LILT
+    type: auto
+    candidates: [lilt, liltai, lilt-ai, lilt-inc]
+
+  - name: Productive Playhouse
+    type: auto
+    candidates: [productiveplayhouse, productive-playhouse, productiveplayhouseinc]
+
+  - name: Rise Data Labs
+    type: auto
+    candidates: [risedatalabs, rise-data-labs, risedata]
+
+  - name: Gramian Consulting
+    type: auto
+    candidates: [gramian, gramianconsulting, gramian-consulting]
+
+  - name: iMerit
+    type: auto
+    candidates: [imerit, imerittechnology, imerit-technology]
+
+  - name: Lionbridge
+    type: auto
+    candidates: [lionbridge, lionbridgeai, lionbridge-ai]
+
+  # ---------------- AI laboratuvarları (sadece ilgili başlıklar) ----------------
+
+  - name: xAI
+    type: greenhouse
+    slug: xai
+    require_include: true
+
+  - name: Anthropic
+    type: greenhouse
+    slug: anthropic
+    require_include: true
+
+  - name: OpenAI
+    type: ashby
+    slug: openai
+    require_include: true
+
+  - name: Google DeepMind
+    type: greenhouse
+    slug: deepmind
+    require_include: true
