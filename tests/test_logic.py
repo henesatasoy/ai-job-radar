@@ -234,3 +234,12 @@ def test_hot_still_obeys_hard_rules():
     low = J(title="Ads Rater - Turkish", description="approximately $6 per hour")
     assert classify(low, PROFILE, {})[0] == "drop"
     assert classify(J(title="Native Turkish speakers NYC (in-person)", location="New York"), PROFILE, {})[0] == "drop"
+
+
+def test_same_role_twice_sent_once(env):
+    cfg, listing, tg, calls = env
+    runner.run(cfg)
+    listing["jobs"].append(J(native_id="/jobs/list_A/turkish-linguistic-expert", title="Turkish linguistic expert"))
+    listing["jobs"].append(J(native_id="/jobs/list_B/turkish-linguistic-expert", title="Turkish linguistic expert"))
+    runner.run(cfg)
+    assert sum("Turkish linguistic expert" in m for m in tg.msgs) == 1

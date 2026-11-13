@@ -154,6 +154,7 @@ def process_candidates(candidates, cfg: Settings, state: State, alerts: list[str
     shortlist: list[Job] = []
     hot_ids: set[str] = set()
     kw_ids: set[str] = set()
+    run_keys: set[str] = set()
     for src, job in candidates:
         if too_old(job, max_age):
             log.info("old, skipped: %s", job.short())
@@ -169,6 +170,10 @@ def process_candidates(candidates, cfg: Settings, state: State, alerts: list[str
         if verdict == "drop":
             continue
         key = title_key(job.company, job.title, job.location)
+        if key in run_keys:
+            log.info("dupe, skipped: %s", job.short())
+            continue  # same role listed twice under different ids
+        run_keys.add(key)
         job.is_repost = state.repost_seen_recently(key, repost_days)
         if verdict == "hot":
             hot_ids.add(job.key)
@@ -287,10 +292,12 @@ def run_test(cfg: Settings, state: State, tg: Telegram) -> int:
 
     # run the filter on everything currently listed, show the best few
     prof = cfg.profile
-    kept = []
+    kept, keys = [], set()
     for src, j in sample:
         v, why = classify(j, prof, src)
-        if v != "drop":
+        k = title_key(j.company, j.title, j.location)
+        if v != "drop" and k not in keys:
+            keys.add(k)
             j.reason = why
             kept.append((v, j))
     hot = [j for v, j in kept if v == "hot"]
