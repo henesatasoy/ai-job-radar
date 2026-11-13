@@ -126,7 +126,7 @@ def env(tmp_path, monkeypatch):
     def fake_score(jobs, cv, prof, cfg, batch=8):
         calls["llm"] += 1
         for j in jobs:
-            j.score = 90 if "tutor" in j.title.lower() else 30
+            j.score = 90 if ("tutor" in j.title.lower() or "turkish" in j.title.lower()) else 30
             j.reason = "test"
 
     monkeypatch.setattr(llm, "score", fake_score)
