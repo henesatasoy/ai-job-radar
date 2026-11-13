@@ -279,7 +279,8 @@ def run_test(cfg: Settings, state: State, tg: Telegram) -> int:
         if isinstance(res, Exception):
             rows.append(f"❌ {esc(name)}  {esc(type(res).__name__)} {esc(str(res)[:80])}")
         else:
-            rows.append(f"{'✅' if res else '📭'} {esc(name)}  {len(res)} ilan")
+            how = f" ({src['type']}/{src['slug']})" if s["type"] == "auto" else ""
+            rows.append(f"{'✅' if res else '📭'} {esc(name)}  {len(res)} ilan{esc(how)}")
             sample.extend((src, j) for j in res)
     for m in format_digest_lines(rows, "Kaynak durumu"):
         tg.send(m)

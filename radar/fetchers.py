@@ -31,6 +31,10 @@ def fetcher(name: str):
     return deco
 
 
+def _ua(src: dict) -> dict | None:
+    return {"User-Agent": src["user_agent"]} if src.get("user_agent") else None
+
+
 def _company(src: dict) -> str:
     return src.get("company") or src["name"]
 
@@ -40,8 +44,32 @@ def _company(src: dict) -> str:
 @fetcher("greenhouse")
 def greenhouse(src: dict) -> list[Job]:
     host = "boards-api.eu.greenhouse.io" if src.get("eu") else "boards-api.greenhouse.io"
-    data = net.get_json(f"https://{host}/v1/boards/{src['slug']}/jobs", params={"content": "true"})
-    return parse_greenhouse(data, src)
+    try:
+        data = net.get_json(f"https://{host}/v1/boards/{src['slug']}/jobs", params={"content": "true"})
+        jobs = parse_greenhouse(data, src)
+        if jobs or src.get("no_fallback"):
+            return jobs
+    except Exception as e:
+        if src.get("no_fallback"):
+            raise
+        log.info("greenhouse api failed for %s (%s), reading the html board", src["slug"], e)
+    return greenhouse_html(src)
+
+
+def greenhouse_html(src: dict) -> list[Job]:
+    """Some boards answer 404 on the API but the public board page still works."""
+    slug = src["slug"]
+    board = "job-boards.eu.greenhouse.io" if src.get("eu") else "job-boards.greenhouse.io"
+    trial = dict(
+        src,
+        url=f"https://{board}/{slug}",
+        link=rf"/{re.escape(slug)}/jobs/\d+",
+        id_regex=r"/jobs/(\d+)",
+        pages=src.get("html_pages", 40),
+        page_param="page",
+        urls=None,
+    )
+    return html_links(trial)
 
 
 def parse_greenhouse(data: dict, src: dict) -> list[Job]:
@@ -352,12 +380,12 @@ def _sitemap_entries(xml_text: str) -> tuple[list[str], list[tuple[str, str]]]:
 
 @fetcher("sitemap")
 def sitemap(src: dict) -> list[Job]:
-    text = net.get_text(src["url"], timeout=40)
+    text = net.get_text(src["url"], timeout=40, headers=_ua(src))
     children, urls = _sitemap_entries(text)
     for child in children[: src.get("max_children", 10)]:
         if src.get("child_include") and not re.search(src["child_include"], child):
             continue
-        _, more = _sitemap_entries(net.get_text(child, timeout=40))
+        _, more = _sitemap_entries(net.get_text(child, timeout=40, headers=_ua(src)))
         urls.extend(more)
     return parse_sitemap_urls(urls, src)
 
@@ -454,7 +482,7 @@ def html_links(src: dict) -> list[Job]:
     for gi, group in enumerate(_page_urls(src)):
         for pi, page_url in enumerate(group):
             try:
-                text = net.get_text(page_url, timeout=40)
+                text = net.get_text(page_url, timeout=40, headers=_ua(src))
             except Exception:
                 if gi == 0 and pi == 0:
                     raise  # the main page must work
@@ -527,7 +555,7 @@ def probe(src: dict) -> tuple[str, str, list[Job]] | None:
     types = src.get("try_types") or AUTO_TYPES
     for slug in src.get("candidates", []):
         for t in types:
-            trial = dict(src, type=t, slug=slug)
+            trial = dict(src, type=t, slug=slug, no_fallback=True)
             try:
                 jobs = FETCHERS[t](trial)
             except Exception:

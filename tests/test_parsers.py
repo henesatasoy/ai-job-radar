@@ -177,3 +177,18 @@ def test_probe(monkeypatch):
     monkeypatch.setitem(fetchers.FETCHERS, "lever", fake_lever)
     res = fetchers.probe({"name": "P", "candidates": ["a", "b"], "try_types": ["greenhouse", "lever"]})
     assert res[0] == "lever" and res[1] == "b"
+
+
+def test_greenhouse_falls_back_to_html(monkeypatch):
+    def api_404(url, **kw):
+        raise RuntimeError("404")
+
+    page = '<a href="https://job-boards.eu.greenhouse.io/agency/jobs/4738026101">Turkish Writer Remote</a>'
+    monkeypatch.setattr(fetchers.net, "get_json", api_404)
+    monkeypatch.setattr(fetchers.net, "get_text", lambda url, **kw: page)
+    jobs = fetchers.greenhouse({"name": "Invisible", "slug": "agency", "eu": True})
+    assert [j.native_id for j in jobs] == ["4738026101"]
+    # probing must not fall back
+    import pytest
+    with pytest.raises(RuntimeError):
+        fetchers.greenhouse({"name": "P", "slug": "x", "no_fallback": True})

@@ -31,10 +31,17 @@ sources:
     include: '/post/[0-9a-f-]{36}'
     title_from: page
     enrich: true
+    # tarayıcı gibi görünen istekleri engelliyor, açıkça bot olduğumuzu söylüyoruz
+    user_agent: 'Mozilla/5.0 (compatible; ai-job-radar/1.0; +https://github.com/henesatasoy/ai-job-radar)'
 
+  # Greenhouse panosu boş, ilanlar kendi sitelerinde
   - name: Alignerr
-    type: greenhouse
-    slug: alignerr
+    type: html
+    url: https://www.alignerr.com/jobs
+    link: 'alignerr\.com/jobs/[0-9a-f-]{36}'
+    id_regex: '/jobs/([0-9a-f-]{36})'
+    pages: 5
+    enrich: true
 
   - name: Invisible
     type: greenhouse
@@ -76,9 +83,10 @@ sources:
     enrich: true
 
   - name: Claru
-    type: html
-    url: https://claru.ai/jobs
-    link: 'claru\.ai/jobs/[^/?#]+/?$'
+    type: sitemap
+    url: https://claru.ai/sitemap.xml
+    include: 'claru\.ai/jobs/[^/?#]+$'
+    title_from: slug
     enrich: true
 
   - name: Perle
@@ -146,9 +154,20 @@ sources:
     type: lever
     slug: getwingapp
 
+  # DataForce, TransPerfect'in AI veri birimi. Eski Recruitee hesabı kapanmış.
   - name: DataForce
+    company: DataForce (TransPerfect)
     type: recruitee
-    slug: dataforce
+    slug: transperfect
+
+  - name: TransPerfect Community
+    company: DataForce (TransPerfect)
+    type: html
+    url: https://community.transperfect.com/jobs
+    page_url: 'https://community.transperfect.com/jobs/show_more?page={n}'
+    pages: 12
+    link: 'community\.transperfect\.com/jobs/\d+-'
+    id_regex: '/jobs/(\d+)'
 
   - name: Sigma AI
     type: html
