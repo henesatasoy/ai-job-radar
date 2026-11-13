@@ -47,6 +47,7 @@ def slug_to_title(slug: str) -> str:
 def title_key(company: str, title: str, location: str = "") -> str:
     t = fold(f"{company}|{title}|{location}")
     t = re.sub(r"[^a-z0-9|]+", " ", t)
+    t = re.sub(r"\b([a-z]{3,})s\b", r"\1", t)  # experts == expert
     return _WS_RE.sub(" ", t).strip()
 
 

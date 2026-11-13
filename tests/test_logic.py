@@ -243,3 +243,32 @@ def test_same_role_twice_sent_once(env):
     listing["jobs"].append(J(native_id="/jobs/list_B/turkish-linguistic-expert", title="Turkish linguistic expert"))
     runner.run(cfg)
     assert sum("Turkish linguistic expert" in m for m in tg.msgs) == 1
+
+
+def test_gemini_model_fallback(monkeypatch):
+    import requests
+
+    tried = []
+
+    def fake_post(url, body, headers=None, timeout=None):
+        tried.append(url.split("/models/")[1].split(":")[0])
+        if len(tried) == 1:
+            r = requests.Response()
+            r.status_code = 404
+            raise requests.HTTPError("404 model not found", response=r)
+        return {"candidates": [{"content": {"parts": [{"text": '{"results":[{"id":"S::1","score":70,"reason":"ok"}]}'}]}}]}
+
+    monkeypatch.setattr(llm.net, "post_json", fake_post)
+    cfg = {"provider": "gemini", "api_key": "k"}
+    j = J()
+    llm.score([j], "cv", PROFILE, cfg)
+    assert j.score == 70 and tried[0] == "gemini-flash-latest" and cfg["model"] == tried[1]
+
+
+def test_llm_error_text_is_kept(monkeypatch):
+    def boom(*a, **k):
+        raise RuntimeError("API key not valid")
+
+    monkeypatch.setattr(llm.net, "post_json", boom)
+    with pytest.raises(RuntimeError, match="API key not valid"):
+        llm.score([J()], "cv", PROFILE, {"provider": "gemini", "api_key": "k"})

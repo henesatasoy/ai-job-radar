@@ -79,16 +79,31 @@ def _jobs_text(jobs: list[Job], desc_chars: int) -> str:
     return "\n".join(rows)
 
 
+GEMINI_FALLBACKS = ["gemini-flash-latest", "gemini-2.5-flash", "gemini-2.0-flash", "gemini-flash-lite-latest"]
+
+
 def _call_gemini(cfg: dict, prompt: str) -> str:
-    model = cfg.get("model") or DEFAULT_MODELS["gemini"]
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+    models = [cfg["model"]] if cfg.get("model") else []
+    models += [m for m in GEMINI_FALLBACKS if m not in models]
     body = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {"temperature": 0.2, "responseMimeType": "application/json"},
     }
-    data = net.post_json(url, body, headers={"x-goog-api-key": cfg["api_key"]}, timeout=90)
-    parts = data["candidates"][0]["content"]["parts"]
-    return "".join(p.get("text", "") for p in parts)
+    last = None
+    for model in models:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+        try:
+            data = net.post_json(url, body, headers={"x-goog-api-key": cfg["api_key"]}, timeout=90)
+        except Exception as e:  # noqa: BLE001
+            resp = getattr(e, "response", None)
+            if resp is not None and resp.status_code == 404:
+                last = e
+                continue  # model name not available, try the next one
+            raise
+        cfg["model"] = model  # remember the one that worked
+        parts = data["candidates"][0]["content"]["parts"]
+        return "".join(p.get("text", "") for p in parts)
+    raise last or RuntimeError("no gemini model available")
 
 
 def _call_openai(cfg: dict, prompt: str) -> str:
@@ -142,7 +157,7 @@ def score(jobs: list[Job], cv: str, profile: dict, cfg: dict, batch: int = 8) ->
         return
     call = _call_gemini if cfg.get("provider", "gemini") == "gemini" else _call_openai
     desc_chars = int((profile.get("rules") or {}).get("llm_desc_chars", 1500))
-    errors = 0
+    errors, first_err = 0, ""
     for i in range(0, len(jobs), batch):
         chunk = jobs[i : i + batch]
         prompt = PROMPT.format(
@@ -154,6 +169,7 @@ def score(jobs: list[Job], cv: str, profile: dict, cfg: dict, batch: int = 8) ->
             res = parse_results(call(cfg, prompt))
         except Exception as e:
             errors += 1
+            first_err = first_err or f"{type(e).__name__}: {e}"
             log.warning("LLM call failed: %s", e)
             continue
         for j in chunk:
@@ -161,4 +177,4 @@ def score(jobs: list[Job], cv: str, profile: dict, cfg: dict, batch: int = 8) ->
             if r:
                 j.score, j.reason = r["score"], r["reason"]
     if errors and errors * batch >= len(jobs):
-        raise RuntimeError("all LLM calls failed")
+        raise RuntimeError(f"all LLM calls failed. {first_err[:300]}")

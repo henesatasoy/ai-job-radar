@@ -225,7 +225,11 @@ sources:
     slug: openai
     require_include: true
 
+  # DeepMind ilanlarını Google'ın kariyer sitesine taşıdı
   - name: Google DeepMind
-    type: greenhouse
-    slug: deepmind
+    type: html
+    url: 'https://www.google.com/about/careers/applications/jobs/results?company=DeepMind'
+    pages: 10
+    link: '/jobs/results/\d+-'
+    id_regex: '/jobs/results/(\d+)'
     require_include: true

@@ -24,6 +24,12 @@ def _t(timeout):
 _local = threading.local()
 
 
+def _check(r: requests.Response) -> None:
+    if r.status_code >= 400:
+        body = (r.text or "")[:300].replace("\n", " ")
+        raise requests.HTTPError(f"{r.status_code} for {r.url.split('?')[0]} {body}", response=r)
+
+
 def session() -> requests.Session:
     """One session per thread, with polite retries."""
     s = getattr(_local, "s", None)
@@ -51,7 +57,7 @@ def session() -> requests.Session:
 
 def get(url: str, *, params=None, headers=None, timeout=DEFAULT_TIMEOUT) -> requests.Response:
     r = session().get(url, params=params, headers=headers, timeout=_t(timeout))
-    r.raise_for_status()
+    _check(r)
     return r
 
 
@@ -65,7 +71,7 @@ def post_json(url: str, payload, *, headers=None, timeout=DEFAULT_TIMEOUT):
     h = {"Accept": "application/json", "Content-Type": "application/json"}
     h.update(headers or {})
     r = session().post(url, json=payload, headers=h, timeout=_t(timeout))
-    r.raise_for_status()
+    _check(r)
     return r.json()
 
 

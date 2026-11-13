@@ -6,6 +6,7 @@
 # ---- Kişisel ayarlar ----
 min_hourly_usd: 12.5        # Saatlik ücret yazan ve bunun altında kalan ilanlar elenir. null = kapalı
 min_score: 60               # Yapay zeka puanı (0-100) bu sayının altındaysa bildirim gelmez
+hot_min_score: 35           # Türkçe ilanlar için daha düşük eşik (örneğin Türkiye'deki kodlama işleri elensin)
 languages: [Turkish, English]
 interests: |
   Turkish language and localization work, Turkish-English review.

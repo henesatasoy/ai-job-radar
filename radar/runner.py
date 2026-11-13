@@ -191,6 +191,7 @@ def process_candidates(candidates, cfg: Settings, state: State, alerts: list[str
         return []
 
     min_score = int(prof.get("min_score", 60))
+    hot_min = int(prof.get("hot_min_score", 35))
     use_llm = llm.enabled(cfg.llm)
     if use_llm:
         try:
@@ -202,7 +203,8 @@ def process_candidates(candidates, cfg: Settings, state: State, alerts: list[str
     out = []
     for j in shortlist:
         if j.key in hot_ids:
-            out.append(j)
+            if not (use_llm and j.score is not None and j.score < hot_min):
+                out.append(j)
         elif use_llm and j.score is not None:
             if j.score >= min_score:
                 out.append(j)
