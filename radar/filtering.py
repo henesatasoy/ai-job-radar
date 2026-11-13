@@ -7,6 +7,7 @@ Result for each job is one of
 """
 from __future__ import annotations
 
+import re
 from datetime import datetime, timedelta, timezone
 
 from .models import Job
@@ -20,16 +21,23 @@ def _any(words, text: str) -> str | None:
     return None
 
 
+def _word_any(words, text: str) -> str | None:
+    """Like _any but matches whole words, so 'us' does not match 'campus'."""
+    for w in words or []:
+        if re.search(rf"(?<![a-z0-9]){re.escape(fold(w))}(?![a-z0-9])", text):
+            return w
+    return None
+
+
 def classify(job: Job, profile: dict, src: dict) -> tuple[str, str]:
     title = fold(job.title)
     loc = fold(job.location)
     head = fold(job.description[:1500])
     everything = f"{title} | {loc} | {head}"
 
-    # 1. hot words, for example Turkish, win over everything else
-    hit = _any(profile.get("always_include"), f"{title} | {loc}")
-    if hit:
-        return "hot", f"'{hit}' geçiyor"
+    # 1. hot words, for example Turkish. They skip the score check later,
+    #    but hard rules below (field, location, pay) still apply.
+    hot = _any(profile.get("always_include"), f"{title} | {loc}")
 
     # 2. title blacklist
     hit = _any(profile.get("exclude_title"), title)
@@ -41,9 +49,12 @@ def classify(job: Job, profile: dict, src: dict) -> tuple[str, str]:
     hit = _any(lrules.get("block"), f"{loc} | {head}")
     if hit:
         return "drop", f"konum kısıtı '{hit}'"
+    has_ok_place = _any(lrules.get("ok_places"), loc)
+    place = _word_any(lrules.get("block_places"), loc)
+    if place and not has_ok_place:
+        return "drop", f"sadece {place}"
     if loc and lrules.get("allowed_only_if_remote"):
         is_remote = job.remote or _any(lrules.get("remote_words"), loc)
-        has_ok_place = _any(lrules.get("ok_places"), loc)
         onsite = _any(lrules.get("onsite_words"), loc)
         if onsite and not has_ok_place and not is_remote:
             return "drop", "ofiste çalışma"
@@ -55,6 +66,9 @@ def classify(job: Job, profile: dict, src: dict) -> tuple[str, str]:
         job.pay = job.pay or fmt_pay(rng)
         if floor and rng[1] < float(floor):
             return "drop", f"ücret düşük ({fmt_pay(rng)})"
+
+    if hot:
+        return "hot", f"'{hot}' geçiyor"
 
     # 5. sources with many unrelated roles (AI labs) must match an include word
     if src.get("require_include"):

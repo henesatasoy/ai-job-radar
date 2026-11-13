@@ -3,16 +3,23 @@
 # aynı formatta GitHub Secret olarak PROFILE_YAML adıyla ekle, bu dosyanın üstüne yazılır.
 # CV buraya YAZILMAZ, CV_TEXT secret'ına girer.
 
-# ---- Enes dolduracak ----
-min_hourly_usd: null        # örn 20. Saatlik ücret yazan ve bunun altında kalan ilanlar elenir. null = kapalı
+# ---- Kişisel ayarlar ----
+min_hourly_usd: 12.5        # Saatlik ücret yazan ve bunun altında kalan ilanlar elenir. null = kapalı
 min_score: 60               # Yapay zeka puanı (0-100) bu sayının altındaysa bildirim gelmez
 languages: [Turkish, English]
 interests: |
-  (CV gelince doldurulacak) Örnek
-  AI training, RLHF, model evaluation, Turkish language tasks, red teaming, prompt writing
+  Turkish language and localization work, Turkish-English review.
+  RLHF, SFT, preference ranking, side by side comparison, golden response writing.
+  AI output evaluation, quality auditing, QA and reviewer roles, rubric design.
+  Factuality and safety evaluation, red teaming, adversarial testing.
+  Tool use, function calling, agent and computer use evaluation, spreadsheet tasks.
+  Generalist AI trainer roles. Psychology or behavioral science roles are a plus.
+  Human data ops or team lead roles in AI training are welcome.
 avoid: |
-  (isteğe bağlı) Örnek
-  Tamamen ofiste olan işler, sadece ABD'de oturanlara açık işler
+  Medicine, healthcare, clinical, pharma or law and legal roles.
+  Jobs limited to US residents or other specific countries that exclude Turkey.
+  Fully on site or in person jobs.
+  Roles that need a PhD, a medical or law licence, or a specific STEM degree.
 
 # ---- Kelime filtresi (yapay zekadan önce çalışır, ücretsiz) ----
 
@@ -69,6 +76,23 @@ exclude_title:
   - director
   - physician
   - nurse
+  - doctor
+  - medical
+  - medicine
+  - clinical
+  - clinician
+  - healthcare
+  - health care
+  - pharma
+  - dentist
+  - radiolog
+  - surgeon
+  - legal
+  - lawyer
+  - paralegal
+  - law expert
+  - law specialist
+  - juris
   - in-person
   - in person
 
@@ -89,6 +113,29 @@ location:
     - onsite only
     - on-site only
     - in-person study
+    - us citizens
+    - us work authorization
+    - authorized to work in the united states
+    - authorized to work in the us
+  # Konum sadece bunlardan biriyse ve listede Türkiye/Avrupa/global yoksa elenir (tam kelime eşleşir)
+  block_places:
+    - us
+    - usa
+    - u.s.
+    - united states
+    - canada
+    - united kingdom
+    - uk
+    - australia
+    - india
+    - philippines
+    - new york
+    - nyc
+    - san francisco
+    - california
+    - texas
+    - seattle
+    - london
   allowed_only_if_remote: true
   onsite_words: [on-site, onsite, in office, in-office, hybrid]
   remote_words: [remote, anywhere, worldwide, global]

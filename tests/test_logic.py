@@ -221,3 +221,16 @@ def test_test_mode_reports_and_keeps_state(env):
     assert "Turkish AI Tutor" in joined
     assert "Test bitti" in joined
     assert not cfg.state_path.exists()
+
+
+def test_block_places_whole_word():
+    assert classify(J(title="AI Trainer", location="Remote - US"), PROFILE, {})[0] == "drop"
+    assert classify(J(title="AI Trainer", location="United States; Turkey"), PROFILE, {})[0] == "hot"
+    assert classify(J(title="AI Trainer", location="Campus Remote"), PROFILE, {})[0] == "keep"
+
+
+def test_hot_still_obeys_hard_rules():
+    assert classify(J(title="Turkish Medical Translator"), PROFILE, {})[0] == "drop"
+    low = J(title="Ads Rater - Turkish", description="approximately $6 per hour")
+    assert classify(low, PROFILE, {})[0] == "drop"
+    assert classify(J(title="Native Turkish speakers NYC (in-person)", location="New York"), PROFILE, {})[0] == "drop"
