@@ -220,6 +220,7 @@ def test_test_mode_reports_and_keeps_state(env):
     assert "❌ Down" in joined
     assert "Turkish AI Tutor" in joined
     assert "Test bitti" in joined
+    assert "eşiğini geçti" in joined
     assert not cfg.state_path.exists()
 
 
@@ -292,3 +293,11 @@ def test_llm_error_text_is_kept(monkeypatch):
     monkeypatch.setattr(llm.net, "post_raw", lambda *a, **k: _resp(400, "API key not valid"))
     with pytest.raises(RuntimeError, match="API key not valid"):
         llm.score([J()], "cv", PROFILE, {"provider": "gemini", "api_key": "k"})
+
+
+def test_test_mode_hides_low_scores(env):
+    cfg, listing, tg, calls = env
+    listing["jobs"].append(J(native_id="k", title="Kotlin Specialist Project Turkey", location="Remote"))
+    runner.run(cfg, mode="test")
+    joined = "\n".join(tg.msgs)
+    assert "Kotlin" not in joined  # fake scorer gives it 30, below the Turkish floor

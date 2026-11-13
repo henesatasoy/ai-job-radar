@@ -303,15 +303,33 @@ def run_test(cfg: Settings, state: State, tg: Telegram) -> int:
             j.reason = why
             kept.append((v, j))
     hot = [j for v, j in kept if v == "hot"]
-    pool = hot[:6] + [j for v, j in kept if v == "keep"][: 18 - min(len(hot), 6)]
+    keep = [j for v, j in kept if v == "keep"]
+    hot_set = {j.key for j in hot}
+    # score every Turkish role plus a sample of the rest, then apply the real sending rules
+    pool = hot[:30] + keep[:20]
+    scored = False
     if pool and llm.enabled(cfg.llm):
         try:
             llm.score(pool, cfg.cv_text, prof, cfg.llm)
+            scored = True
         except Exception as e:  # noqa: BLE001
-            tg.send(f"⚠️ Yapay zeka testi başarısız. {esc(str(e)[:200])}")
-    pool.sort(key=lambda j: -(j.score or 0))
-    tg.send(f"Filtreden geçen mevcut ilan sayısı {len(kept)} (Türkçe vb. öncelikli {len(hot)}). En iyi 5 örnek aşağıda.")
-    for j in pool[:5]:
+            tg.send(f"⚠️ Yapay zeka testi başarısız. {esc(str(e)[:300])}")
+    min_score = int(prof.get("min_score", 60))
+    hot_min = int(prof.get("hot_min_score", 35))
+    if scored:
+        passed = [
+            j for j in pool
+            if j.score is not None and j.score >= (hot_min if j.key in hot_set else min_score)
+        ]
+    else:
+        passed = pool
+    passed.sort(key=lambda j: -(j.score or 0))
+    tg.send(
+        f"Kelime filtresinden geçen {len(kept)} ilan var, {len(hot)} tanesi Türkçe ile ilgili. "
+        f"Bunlardan {len(pool)} tanesini yapay zekaya puanlattım, {len(passed)} tanesi bildirim eşiğini geçti. "
+        f"En iyi 5 tanesi aşağıda."
+    )
+    for j in passed[:5]:
         tg.send(format_job(j))
     tg.send(health_text(cfg, state, results, title="🧪 Test bitti"))
     return 0

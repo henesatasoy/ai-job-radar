@@ -44,7 +44,7 @@ JOBS
 {jobs}
 
 Return only JSON in this shape
-{{"results": [{{"id": "<job id>", "score": 0-100, "eligible": true/false, "reason": "<at most 18 words, simple Turkish, no dashes, no semicolons, no colons>"}}]}}
+{{"results": [{{"id": "<job id>", "score": 0-100, "eligible": true/false, "reason": "<at most 18 words in simple Turkish with correct Turkish letters (ç, ğ, ı, İ, ö, ş, ü). No dashes, no semicolons, no colons>"}}]}}
 Give one result for every job id."""
 
 
