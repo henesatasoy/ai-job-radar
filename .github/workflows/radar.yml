@@ -2,8 +2,8 @@ name: radar
 
 on:
   schedule:
-    # Her 15 dakikada bir (UTC). GitHub yoğunken birkaç dakika gecikebilir.
-    - cron: "*/15 * * * *"
+    # Her 15 dakikada bir (UTC). Saat başı ve çeyrekler GitHub için en yoğun anlar, o yüzden 7, 22, 37 ve 52. dakikalarda.
+    - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
     inputs:
       mode:
