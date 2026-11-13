@@ -182,31 +182,51 @@ sources:
     tenant: centific
     site: Centific_Global
 
-  # Hangi sistemi kullandıkları belli değil. Bot her gün bu isimleri
-  # Greenhouse, Lever, Ashby, Workable ve Recruitee'de dener, bulursa kendisi kaydeder.
   - name: LILT
-    type: auto
-    candidates: [lilt, liltai, lilt-ai, lilt-inc]
+    type: ashby
+    slug: lilt-production   # AI veri uzmanı ve dilbilimci ilanları
+
+  - name: LILT (kurumsal)
+    company: LILT
+    type: ashby
+    slug: lilt-corporate
 
   - name: Productive Playhouse
-    type: auto
-    candidates: [productiveplayhouse, productive-playhouse, productiveplayhouseinc]
+    type: html
+    url: https://productiveplayhouse.applytojob.com/
+    link: 'applytojob\.com/apply/[A-Za-z0-9]{8,}/'
+    id_regex: '/apply/([A-Za-z0-9]{8,})/'
 
   - name: Rise Data Labs
-    type: auto
-    candidates: [risedatalabs, rise-data-labs, risedata]
-
-  - name: Gramian Consulting
-    type: auto
-    candidates: [gramian, gramianconsulting, gramian-consulting]
+    type: html
+    url: https://experts.risedatalabs.com/jobs
+    link: 'experts\.risedatalabs\.com/jobs/[^/?#]+$'
+    enrich: true
 
   - name: iMerit
-    type: auto
-    candidates: [imerit, imerittechnology, imerit-technology]
+    type: html
+    url: https://scholars.net/en/jobs
+    pages: 8
+    link: 'scholars\.net/en/jobs/\d+'
+    id_regex: '/jobs/(\d+)'
+    enrich: true
+
+  - name: Gramian Consulting
+    type: workable
+    slug: gramian
+
+  # Lionbridge'in AI eğitim projeleri (ai-opportunities.lionbridge.com) Lever'ın AB sunucusundan geliyor
+  - name: Lionbridge AI
+    company: Lionbridge
+    type: lever
+    slug: lionbridge
+    eu: true
 
   - name: Lionbridge
-    type: auto
-    candidates: [lionbridge, lionbridgeai, lionbridge-ai]
+    type: html
+    url: https://careers.lionbridge.com/jobs/search
+    pages: 6
+    link: 'careers\.lionbridge\.com/jobs/(?!search)[^/?#]+$'
 
   # ---------------- AI laboratuvarları (sadece ilgili başlıklar) ----------------
 
