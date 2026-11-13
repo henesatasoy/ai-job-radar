@@ -40,6 +40,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           CV_TEXT: ${{ secrets.CV_TEXT }}
           PROFILE_YAML: ${{ secrets.PROFILE_YAML }}
+          PRIVATE_SOURCES: ${{ secrets.PRIVATE_SOURCES }}
           LLM_PROVIDER: ${{ secrets.LLM_PROVIDER }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}

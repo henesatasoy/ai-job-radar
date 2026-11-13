@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import html
 import re
 import unicodedata
@@ -48,7 +49,9 @@ def title_key(company: str, title: str, location: str = "") -> str:
     t = fold(f"{company}|{title}|{location}")
     t = re.sub(r"[^a-z0-9|]+", " ", t)
     t = re.sub(r"\b([a-z]{3,})s\b", r"\1", t)  # experts == expert
-    return _WS_RE.sub(" ", t).strip()
+    t = _WS_RE.sub(" ", t).strip()
+    # stored in the public state file, so keep only a hash
+    return hashlib.sha1(t.encode("utf-8")).hexdigest()[:16]
 
 
 def parse_dt(value) -> Optional[datetime]:

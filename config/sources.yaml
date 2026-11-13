@@ -25,15 +25,6 @@ sources:
     title_from: slug
     enrich: true
 
-  - name: micro1
-    type: sitemap
-    url: https://jobs.micro1.ai/sitemap.xml
-    include: '/post/[0-9a-f-]{36}'
-    title_from: page
-    enrich: true
-    # tarayıcı gibi görünen istekleri engelliyor, açıkça bot olduğumuzu söylüyoruz
-    user_agent: 'Mozilla/5.0 (compatible; ai-job-radar/1.0; +https://github.com/henesatasoy/ai-job-radar)'
-
   # Greenhouse panosu boş, ilanlar kendi sitelerinde
   - name: Alignerr
     type: html

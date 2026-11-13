@@ -152,9 +152,9 @@ def test_html_paging_stops_when_nothing_new(monkeypatch):
 
 
 def test_page_meta():
-    html = '<html><head><title>x</title><meta property="og:title" content="Turkish Expert | micro1"><meta name="description" content="Skills a, b"></head></html>'
+    html = '<html><head><title>x</title><meta property="og:title" content="Turkish Expert | Acme"><meta name="description" content="Skills a, b"></head></html>'
     m = page_meta(html)
-    assert m["og:title"] == "Turkish Expert | micro1"
+    assert m["og:title"] == "Turkish Expert | Acme"
     assert m["description"] == "Skills a, b"
 
 
@@ -192,3 +192,24 @@ def test_greenhouse_falls_back_to_html(monkeypatch):
     import pytest
     with pytest.raises(RuntimeError):
         fetchers.greenhouse({"name": "P", "slug": "x", "no_fallback": True})
+
+
+def test_json_api_auto_detects_fields(monkeypatch):
+    pages = {
+        1: {"success": True, "data": {"total": 3, "jobs": [
+            {"job_id": "a1", "job_name": "x", "title": "Turkish AI Tutor", "pay_range": "$20-30/h",
+             "created_at": "2026-11-13T10:00:00Z", "required_skills": ["RLHF", "Turkish"]},
+            {"job_id": "b2", "title": "Data Reviewer", "hourly_rate": 25},
+        ]}},
+        2: {"data": {"jobs": [{"job_id": "c3", "title": "Writer"}]}},
+        3: {"data": {"jobs": [{"job_id": "c3", "title": "Writer"}]}},
+    }
+    monkeypatch.setattr(fetchers.net, "get_json", lambda url, **kw: pages[int(url.split("page=")[1].split("&")[0])])
+    src = {"name": "P", "url": "https://api.example/jobs?page={page}&limit=2", "pages": 5,
+           "url_template": "https://example/post/{id}", "fields": {"id": "job_id"}}
+    jobs = fetchers.json_api(src)
+    assert [j.native_id for j in jobs] == ["a1", "b2", "c3"]
+    a = jobs[0]
+    assert a.title == "Turkish AI Tutor" and a.url == "https://example/post/a1"
+    assert "$20-30/h" in a.pay and "RLHF" in a.description and a.posted_at
+    assert jobs[1].pay == "$25"

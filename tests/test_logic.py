@@ -205,7 +205,7 @@ def test_dry_mode_does_not_save(env):
 def test_config_loads_real_files():
     cfg = config.load()
     names = [s["name"] for s in cfg.sources]
-    assert "Mercor" in names and "micro1" in names
+    assert "Mercor" in names and "Alignerr" in names
     assert len(names) == len(set(names))
     for s in cfg.sources:
         assert s["type"] in fetchers.FETCHERS or s["type"] == "auto", s
@@ -301,3 +301,31 @@ def test_test_mode_hides_low_scores(env):
     runner.run(cfg, mode="test")
     joined = "\n".join(tg.msgs)
     assert "Kotlin" not in joined  # fake scorer gives it 30, below the Turkish floor
+
+
+def test_private_source_is_masked(env, caplog, monkeypatch):
+    import logging, json as _json
+    cfg, listing, tg, calls = env
+    cfg.sources = [{"name": "Gizli 1", "type": "fake", "boom": True, "private": True}]
+    with caplog.at_level(logging.INFO):
+        runner.run(cfg)
+    assert "site down" not in caplog.text and "Gizli 1" not in caplog.text
+    st = _json.loads(cfg.state_path.read_text())
+    assert st["sources"]["Gizli 1"]["last_error"] == "RuntimeError"
+
+
+def test_private_sources_from_secret(monkeypatch):
+    monkeypatch.setenv("PRIVATE_SOURCES", "- name: Gizli 1\n  type: json\n  url: https://x/{page}\n")
+    cfg = config.load()
+    p = [s for s in cfg.sources if s["name"] == "Gizli 1"][0]
+    assert p["private"] is True
+
+
+def test_sent_log_counts(env):
+    cfg, listing, tg, calls = env
+    runner.run(cfg)
+    listing["jobs"].append(J(native_id="z", title="Turkish Reviewer", location="Remote"))
+    runner.run(cfg)
+    import json as _json
+    st = _json.loads(cfg.state_path.read_text())
+    assert len(st["sent_log"]) == 1 and set(st["sent_log"][0]) == {"t"}

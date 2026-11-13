@@ -510,6 +510,139 @@ def parse_html_links(text: str, page_url: str, src: dict) -> list[Job]:
     return out
 
 
+# ---------------------------------------------------------------- Generic JSON API
+
+_ID_KEYS = ("id", "_id", "uuid", "job_id", "jobId", "post_id", "slug")
+_TITLE_KEYS = ("title", "job_title", "jobTitle", "name", "role", "position", "role_name")
+_URL_KEYS = ("url", "jobUrl", "job_url", "link", "applyUrl", "apply_url", "absolute_url")
+_LOC_KEYS = ("location", "locations", "country", "countries", "workLocation", "work_location", "region")
+_DATE_KEYS = ("created_at", "createdAt", "published_at", "publishedAt", "posted_at", "postedAt", "date", "updated_at", "updatedAt")
+_DESC_KEYS = ("description", "job_description", "summary", "skills", "required_skills", "requiredSkills")
+
+
+def _dig(data, path: str):
+    for part in path.split("."):
+        if isinstance(data, dict):
+            data = data.get(part)
+        else:
+            return None
+    return data
+
+
+def _largest_list(data, depth: int = 0):
+    """Find the biggest list of objects anywhere in a JSON answer."""
+    best = []
+    if depth > 5:
+        return best
+    if isinstance(data, list):
+        if data and all(isinstance(x, dict) for x in data[:5]):
+            best = data
+        for x in data[:3]:
+            cand = _largest_list(x, depth + 1)
+            if len(cand) > len(best):
+                best = cand
+    elif isinstance(data, dict):
+        for v in data.values():
+            cand = _largest_list(v, depth + 1)
+            if len(cand) > len(best):
+                best = cand
+    return best
+
+
+def _flat(v, limit: int = 300) -> str:
+    if v is None:
+        return ""
+    if isinstance(v, (str, int, float)):
+        return clean(str(v))[:limit]
+    if isinstance(v, dict):
+        parts = [_flat(x, limit) for k, x in v.items() if not str(k).lower().endswith("id")]
+        return ", ".join(p for p in parts if p)[:limit]
+    if isinstance(v, list):
+        return ", ".join(p for p in (_flat(x, limit) for x in v) if p)[:limit]
+    return ""
+
+
+def _pick(item: dict, key: str | None, guesses) -> object:
+    if key:
+        return _dig(item, key)
+    for k in guesses:
+        if item.get(k) not in (None, "", []):
+            return item[k]
+    return None
+
+
+def _guess_pay(item: dict) -> str:
+    vals = []
+    for k, v in item.items():
+        lk = k.lower()
+        if any(w in lk for w in ("pay", "salary", "compensation", "hourly", "rate")) and "rating" not in lk:
+            f = _flat(v, 80)
+            if f:
+                vals.append(f if not isinstance(v, (int, float)) else f"${f}")
+    return " ".join(vals)[:120]
+
+
+@fetcher("json")
+def json_api(src: dict) -> list[Job]:
+    first = int(src.get("first_page", 1))
+    pages = int(src.get("pages", 1))
+    items, seen_ids = [], set()
+    for page in range(first, first + pages):
+        data = net.get_json(src["url"].format(page=page), headers=src.get("headers"))
+        found = _dig(data, src["items_path"]) if src.get("items_path") else _largest_list(data)
+        if not found:
+            break
+        fields = src.get("fields") or {}
+        new = 0
+        for it in found:
+            nid = str(_pick(it, fields.get("id"), _ID_KEYS) or "")
+            if nid and nid not in seen_ids:
+                seen_ids.add(nid)
+                items.append(it)
+                new += 1
+        if not new:
+            break
+    return parse_json_items(items, src)
+
+
+def parse_json_items(items: list[dict], src: dict) -> list[Job]:
+    f = src.get("fields") or {}
+    out = []
+    for it in items:
+        nid = _pick(it, f.get("id"), _ID_KEYS)
+        if nid in (None, ""):
+            continue
+        nid = str(nid)
+        title = _flat(_pick(it, f.get("title"), _TITLE_KEYS), 200)
+        if src.get("url_template"):
+            ctx = {k: v for k, v in it.items() if isinstance(v, (str, int))}
+            ctx["id"] = nid
+            try:
+                url = src["url_template"].format(**ctx)
+            except (KeyError, IndexError):
+                url = ""
+        else:
+            url = _flat(_pick(it, f.get("url"), _URL_KEYS), 500)
+        loc = _flat(_pick(it, f.get("location"), _LOC_KEYS), 150)
+        pay = _flat(_dig(it, f["pay"]), 120) if f.get("pay") else _guess_pay(it)
+        desc_raw = _pick(it, f.get("description"), _DESC_KEYS)
+        out.append(
+            Job(
+                source=src["name"],
+                native_id=nid,
+                title=title or "(başlık yok)",
+                url=url,
+                company=_company(src),
+                location=loc,
+                remote=("remote" in loc.lower()) or None,
+                posted_at=parse_dt(_pick(it, f.get("posted"), _DATE_KEYS)),
+                description=strip_html(_flat(desc_raw, DESC_LIMIT), DESC_LIMIT),
+                pay=pay,
+            )
+        )
+    return out
+
+
 # ---------------------------------------------------------------- Page enrichment
 
 _META_RE = re.compile(

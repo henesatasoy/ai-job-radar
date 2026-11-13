@@ -75,6 +75,7 @@ Repo sayfasında **Settings → Secrets and variables → Actions → New reposi
 | `LLM_MODEL` | Model adı. Boşsa `gemini-flash-latest` kullanılır |
 | `LLM_BASE_URL` | `openai` seçtiysen API adresi. Boşsa Groq |
 | `PROFILE_YAML` | `config/profile.yaml` ayarlarını gizli tutmak istersen aynı formatta buraya yaz |
+| `PRIVATE_SOURCES` | Repoda görünmesini istemediğin kaynaklar. `sources.yaml` ile aynı formatta liste. Loglarda ve kayıt dosyasında maskelenir |
 
 Secret'lar public repoda bile kimseye görünmez.
 
@@ -120,7 +121,7 @@ Dosyaları GitHub sitesinde kalem ikonuna basıp düzenleyebilirsin. Bir sonraki
 
 | Grup | Kaynaklar |
 |---|---|
-| AI eğitim platformları | Mercor, micro1, Alignerr, Invisible, Mindrift, Innodata, Terac, AnyoneAI, Alpheva, Claru, Perle, Snorkel, OpenTrain (sadece kendi ilanları), AfterQuery |
+| AI eğitim platformları | Mercor, Alignerr, Invisible, Mindrift, Innodata, Terac, AnyoneAI, Alpheva, Claru, Perle, Snorkel, OpenTrain (sadece kendi ilanları), AfterQuery |
 | Dil ve yerelleştirme | Appen, RWS, Welo Data, Wing Data, DataForce, Sigma AI, Centific |
 | Otomatik aranan | LILT, Productive Playhouse, Rise Data Labs, Gramian Consulting, iMerit, Lionbridge |
 | AI laboratuvarları | xAI, Anthropic, OpenAI, Google DeepMind (sadece ilgili başlıklar) |

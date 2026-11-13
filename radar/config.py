@@ -39,6 +39,18 @@ def load(root: Path = ROOT) -> Settings:
         if merged.get("enabled", True):
             sources.append(merged)
 
+    # Sources kept out of the public repo. GitHub Secret PRIVATE_SOURCES holds a YAML list
+    # in the same format as sources.yaml. They are marked private so logs and state stay masked.
+    private = os.environ.get("PRIVATE_SOURCES", "").strip()
+    if private:
+        doc = yaml.safe_load(private) or []
+        if isinstance(doc, dict):
+            doc = doc.get("sources") or []
+        for s in doc:
+            merged = dict(defaults, **s, private=True)
+            if merged.get("enabled", True):
+                sources.append(merged)
+
     profile = yaml.safe_load((root / "config" / "profile.yaml").read_text("utf-8")) or {}
     # Optional private override kept in a GitHub Secret
     secret_profile = os.environ.get("PROFILE_YAML", "").strip()

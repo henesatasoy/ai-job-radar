@@ -39,6 +39,11 @@ def _resolve_auto(src: dict, state: State) -> tuple[dict | None, list[Job] | Non
     return dict(src, type=t, slug=slug), jobs
 
 
+def _lname(src: dict) -> str:
+    """Name for the public GitHub log. Private sources are masked."""
+    return "gizli kaynak" if src.get("private") else src["name"]
+
+
 def fetch_one(src: dict) -> list[Job]:
     fn = fetchers.FETCHERS.get(src["type"])
     if not fn:
@@ -65,10 +70,11 @@ def fetch_all(sources: list[dict], state: State, workers: int = 8) -> dict[str, 
         t0 = time.time()
         try:
             jobs = pre if pre is not None else fetch_one(src)
-            log.info("%-22s %4d jobs  %.1fs", src["name"], len(jobs), time.time() - t0)
+            log.info("%-22s %4d jobs  %.1fs", _lname(src), len(jobs), time.time() - t0)
             return src, jobs
         except Exception as e:  # noqa: BLE001
-            log.warning("%-22s FAILED %s: %s", src["name"], type(e).__name__, str(e)[:200])
+            detail = "" if src.get("private") else str(e)[:200]
+            log.warning("%-22s FAILED %s: %s", _lname(src), type(e).__name__, detail)
             return src, e
 
     with ThreadPoolExecutor(max_workers=workers) as ex:
@@ -96,7 +102,8 @@ def run(cfg: Settings, mode: str = "run") -> int:
 
     for name, (src, res) in results.items():
         if isinstance(res, Exception):
-            streak = state.record_fail(name, f"{type(res).__name__}: {res}")
+            err = type(res).__name__ if src.get("private") else f"{type(res).__name__}: {res}"
+            streak = state.record_fail(name, err)
             if streak == alert_after:
                 alerts.append(f"⚠️ {esc(name)} {streak} kez üst üste okunamadı. {esc(str(res)[:150])}")
             # a cached auto slug that stops working gets re-probed next time
@@ -115,7 +122,7 @@ def run(cfg: Settings, mode: str = "run") -> int:
             state.mark_seen(name, by_id.keys())
             state.set_seeded(name)
             state.touch_title_keys(title_key(j.company, j.title, j.location) for j in jobs)
-            log.info("%s seeded with %d jobs (no alerts on first run)", name, len(by_id))
+            log.info("%s seeded with %d jobs (no alerts on first run)", _lname(src), len(by_id))
             continue
 
         new = [j for i, j in by_id.items() if i not in seen]
@@ -132,6 +139,7 @@ def run(cfg: Settings, mode: str = "run") -> int:
     log.info("new postings this run: %d", len(candidates))
     to_send = process_candidates(candidates, cfg, state, alerts)
     send_all(tg, to_send, prof)
+    state.log_sent([{"t": now_iso()} for _ in to_send])
 
     for a in alerts:
         tg.send(a)
@@ -166,7 +174,7 @@ def process_candidates(candidates, cfg: Settings, state: State, alerts: list[str
             except Exception as e:  # noqa: BLE001
                 log.info("enrich failed %s: %s", job.url, e)
         verdict, why = classify(job, prof, src)
-        log.info("%-5s %s  (%s)", verdict, job.short(), why)
+        log.info("%-5s %s  (%s)", verdict, f"[gizli] {job.title}" if src.get("private") else job.short(), why)
         if verdict == "drop":
             continue
         key = title_key(job.company, job.title, job.location)
@@ -288,6 +296,9 @@ def run_test(cfg: Settings, state: State, tg: Telegram) -> int:
         else:
             how = f" ({src['type']}/{src['slug']})" if s["type"] == "auto" else ""
             rows.append(f"{'✅' if res else '📭'} {esc(name)}  {len(res)} ilan{esc(how)}")
+            if s.get("private") and res:
+                ex = res[0]
+                rows.append(f"   örnek  {esc(ex.title[:60])} · {esc(ex.pay[:30])} · {esc(ex.url[:80])}")
             sample.extend((src, j) for j in res)
     for m in format_digest_lines(rows, "Kaynak durumu"):
         tg.send(m)
