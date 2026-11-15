@@ -5012,6 +5012,7 @@
    "21ee6dd3-dcd0-425a-91e9-34a23ab3e434": "2026-11-15",
    "23014bc8-37d4-4fd9-9a77-d95fdd33437f": "2026-11-15",
    "230d7d77-133e-4b87-a7a4-3e8d4e9fdab3": "2026-11-15",
+   "2320fe69-df26-4d1d-ada6-d1a46c0e68a1": "2026-11-15",
    "2348230a-295f-434d-9b16-653e01ddbd0b": "2026-11-15",
    "23b158fe-709e-4bf5-856c-d10953d32f60": "2026-11-15",
    "240d459b-696d-43eb-8497-fab3e56ecd9b": "2026-11-15",
@@ -7885,42 +7886,42 @@
    "fail_streak": 0,
    "last_count": 42,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Alignerr": {
    "fail_streak": 0,
    "last_count": 60,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Alpheva": {
    "fail_streak": 0,
    "last_count": 134,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Anthropic": {
    "fail_streak": 0,
-   "last_count": 668,
+   "last_count": 667,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "AnyoneAI": {
    "fail_streak": 0,
    "last_count": 227,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Appen": {
    "fail_streak": 0,
    "last_count": 16,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Centific": {
@@ -7928,112 +7929,112 @@
    "last_count": 89,
    "last_error": "",
    "last_fail": "2026-11-14T14:03:51+00:00",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Claru": {
    "fail_streak": 0,
    "last_count": 60,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "DataForce": {
    "fail_streak": 0,
    "last_count": 715,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Google DeepMind": {
    "fail_streak": 0,
    "last_count": 159,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Gramian Consulting": {
    "fail_streak": 0,
    "last_count": 323,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Innodata": {
    "fail_streak": 0,
    "last_count": 105,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Invisible": {
    "fail_streak": 0,
    "last_count": 827,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Invisible (US)": {
    "fail_streak": 0,
    "last_count": 20,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "LILT": {
    "fail_streak": 0,
    "last_count": 452,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "LILT (kurumsal)": {
    "fail_streak": 0,
    "last_count": 23,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Lionbridge": {
    "fail_streak": 0,
    "last_count": 44,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Lionbridge AI": {
    "fail_streak": 0,
    "last_count": 48,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Mercor": {
    "fail_streak": 0,
    "last_count": 371,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Mindrift": {
    "fail_streak": 0,
    "last_count": 2394,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "OpenAI": {
    "fail_streak": 0,
-   "last_count": 837,
+   "last_count": 838,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "OpenTrain": {
    "fail_streak": 0,
    "last_count": 185,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Perle": {
@@ -8041,84 +8042,84 @@
    "last_count": 82,
    "last_error": "",
    "last_fail": "2026-11-14T14:03:51+00:00",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Productive Playhouse": {
    "fail_streak": 0,
    "last_count": 55,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "RWS": {
    "fail_streak": 0,
    "last_count": 132,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Rise Data Labs": {
    "fail_streak": 0,
    "last_count": 119,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Sigma AI": {
    "fail_streak": 0,
    "last_count": 18,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Snorkel": {
    "fail_streak": 0,
    "last_count": 43,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Terac": {
    "fail_streak": 0,
    "last_count": 49,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "TransPerfect Community": {
    "fail_streak": 0,
    "last_count": 207,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Welo Data": {
    "fail_streak": 0,
    "last_count": 444,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "Wing Data": {
    "fail_streak": 0,
    "last_count": 390,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "iMerit": {
    "fail_streak": 0,
    "last_count": 44,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   },
   "xAI": {
    "fail_streak": 0,
    "last_count": 296,
    "last_error": "",
-   "last_ok": "2026-11-15T16:38:40+00:00",
+   "last_ok": "2026-11-15T21:21:18+00:00",
    "seeded": true
   }
  },
@@ -15688,6 +15689,7 @@
   "d389e489930e4ffd": "2026-11-14",
   "d38a9ffa517aa3dc": "2026-11-14",
   "d392dd9a426265a1": "2026-11-14",
+  "d395059209f9d03f": "2026-11-15",
   "d3a08916252ddb5d": "2026-11-14",
   "d3a77a47367213df": "2026-11-14",
   "d3aed7b9a3cd8a3e": "2026-11-14",
