@@ -3845,6 +3845,7 @@
    "/jobs/list_AAABn_cc6cSiGnX7SqNI7arz/music-lyrics-expert-german": "2026-11-15",
    "/jobs/list_AAABn_cd2Y4M1Abj0JJFqaY-/music-lyrics-expert-korean": "2026-11-15",
    "/jobs/list_AAABn_cdvrBRkjvHEvhJqboA/music-lyrics-expert-japanese": "2026-11-15",
+   "/jobs/list_AAABn_cfTzoWNDg2B7hOHpvU/music-lyrics-expert-telugu": "2026-11-15",
    "/jobs/list_AAABn_cfZOxBLvxeFKdEW6Od/music-lyrics-expert-thai": "2026-11-15",
    "/jobs/list_AAABn_cm_oIN381KOgpHz7lE/partner-general-counsel-legal-domain-expert": "2026-11-15",
    "/jobs/list_AAABn_cmfyK8fYxPzZtNu7Dh/senior-counsel-legal-domain-expert": "2026-11-15",
@@ -4112,6 +4113,7 @@
    "/jobs/list_AAABocQXRHSLD4MqX_hGVZVy/individual-tax-professional-cpa-ea": "2026-11-15",
    "/jobs/list_AAABocYnLzYgfj-BoRdL-rIt/enterprise-marketing-domain-expert": "2026-11-15",
    "/jobs/list_AAABocYnVCQtatrGQj5G4767/customer-support-success-domain-expert": "2026-11-15",
+   "/jobs/list_AAABocrwuCVk3kRkqXVIm4Vy/generalist": "2026-11-15",
    "/jobs/list_AAABocs4xIYqLBlbNtRKf6Mm/certified-financial-planner-cfp-cfa": "2026-11-15",
    "/jobs/list_AAABocvmQyKqYVaWnhNJlLpY/fab-safety-and-emergency-response-expert": "2026-11-15",
    "/jobs/list_AAABodU-1biYNoQyWeFElIoT/vietnamese-linguistic-expert": "2026-11-15",
@@ -4158,7 +4160,20 @@
    "/jobs/list_AAABodVDxV3haXmB00BKN57Y/traditional-chinese-linguistic-expert": "2026-11-15",
    "/jobs/list_AAABodVECUWPNE5aVVdB9IT1/hebrew-linguistic-expert": "2026-11-15",
    "/jobs/list_AAABodVEEpvBK3U18ZJKUJnY/greek-linguistic-expert": "2026-11-15",
-   "/jobs/list_AAABodVEHAaAjmbH4iJCT7ME/swahili-linguistic-expert": "2026-11-15"
+   "/jobs/list_AAABodVEHAaAjmbH4iJCT7ME/swahili-linguistic-expert": "2026-11-15",
+   "/jobs/list_AAABodda2HesKOKwf2BBqavC/hr-expert": "2026-11-15",
+   "/jobs/list_AAABodda7rBOuu8-efdMp5zh/law-expert": "2026-11-15",
+   "/jobs/list_AAABoddartrKlmqr13pC7I-j/accounting-expert": "2026-11-15",
+   "/jobs/list_AAABoddaxN8U-VxGZ5BD-Y_n/fp-a-expert": "2026-11-15",
+   "/jobs/list_AAABoddbQUy7LCQO6PFLPLqP/investment-banking-expert": "2026-11-15",
+   "/jobs/list_AAABodjkZ9uPRh5LQSxNUZtG/enterprise-account-executive-ai-sales-expert": "2026-11-15",
+   "/jobs/list_AAABodjkhcin__KeNFZHg54O/enterprise-sales-manager-ai-training-specialist": "2026-11-15",
+   "/jobs/list_AAABodwhFg-ByligFaNMTbdJ/regulatory-affairs-expert": "2026-11-15",
+   "/jobs/list_AAABodwhJxxnEH_MCFZCbpsk/clinical-development-operations-expert": "2026-11-15",
+   "/jobs/list_AAABodwhNcs38ACc-CRIT5kC/pharmacovigilance-medical-safety-expert": "2026-11-15",
+   "/jobs/list_AAABodwhSO6KHR7Vl4tALZJa/cmc-manufacturing-quality-expert": "2026-11-15",
+   "/jobs/list_AAABodwhWFi4jOyOolVBaJGw/medical-affairs-commercial-expert": "2026-11-15",
+   "/jobs/list_AAABodwhbMXQuKR3sa9LBqVq/drug-discovery-translational-science-expert": "2026-11-15"
   },
   "Mindrift": {
    "006DB7BD04": "2026-11-15",
@@ -7842,6 +7857,27 @@
   },
   {
    "t": "2026-11-15T09:50:50+00:00"
+  },
+  {
+   "t": "2026-11-15T16:40:24+00:00"
+  },
+  {
+   "t": "2026-11-15T16:40:24+00:00"
+  },
+  {
+   "t": "2026-11-15T16:40:24+00:00"
+  },
+  {
+   "t": "2026-11-15T16:40:24+00:00"
+  },
+  {
+   "t": "2026-11-15T16:40:24+00:00"
+  },
+  {
+   "t": "2026-11-15T16:40:24+00:00"
+  },
+  {
+   "t": "2026-11-15T16:40:24+00:00"
   }
  ],
  "sources": {
@@ -7849,42 +7885,42 @@
    "fail_streak": 0,
    "last_count": 42,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Alignerr": {
    "fail_streak": 0,
    "last_count": 60,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Alpheva": {
    "fail_streak": 0,
    "last_count": 134,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Anthropic": {
    "fail_streak": 0,
    "last_count": 668,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "AnyoneAI": {
    "fail_streak": 0,
    "last_count": 227,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Appen": {
    "fail_streak": 0,
    "last_count": 16,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Centific": {
@@ -7892,112 +7928,112 @@
    "last_count": 89,
    "last_error": "",
    "last_fail": "2026-11-14T14:03:51+00:00",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Claru": {
    "fail_streak": 0,
    "last_count": 60,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "DataForce": {
    "fail_streak": 0,
    "last_count": 715,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Google DeepMind": {
    "fail_streak": 0,
    "last_count": 159,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Gramian Consulting": {
    "fail_streak": 0,
    "last_count": 323,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Innodata": {
    "fail_streak": 0,
    "last_count": 105,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Invisible": {
    "fail_streak": 0,
    "last_count": 827,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Invisible (US)": {
    "fail_streak": 0,
    "last_count": 20,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "LILT": {
    "fail_streak": 0,
    "last_count": 452,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "LILT (kurumsal)": {
    "fail_streak": 0,
    "last_count": 23,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Lionbridge": {
    "fail_streak": 0,
    "last_count": 44,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Lionbridge AI": {
    "fail_streak": 0,
    "last_count": 48,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Mercor": {
    "fail_streak": 0,
-   "last_count": 364,
+   "last_count": 371,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Mindrift": {
    "fail_streak": 0,
    "last_count": 2394,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "OpenAI": {
    "fail_streak": 0,
-   "last_count": 840,
+   "last_count": 837,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "OpenTrain": {
    "fail_streak": 0,
    "last_count": 185,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Perle": {
@@ -8005,84 +8041,84 @@
    "last_count": 82,
    "last_error": "",
    "last_fail": "2026-11-14T14:03:51+00:00",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Productive Playhouse": {
    "fail_streak": 0,
    "last_count": 55,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "RWS": {
    "fail_streak": 0,
    "last_count": 132,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Rise Data Labs": {
    "fail_streak": 0,
    "last_count": 119,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Sigma AI": {
    "fail_streak": 0,
    "last_count": 18,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Snorkel": {
    "fail_streak": 0,
    "last_count": 43,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Terac": {
    "fail_streak": 0,
    "last_count": 49,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "TransPerfect Community": {
    "fail_streak": 0,
    "last_count": 207,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Welo Data": {
    "fail_streak": 0,
    "last_count": 444,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "Wing Data": {
    "fail_streak": 0,
    "last_count": 390,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "iMerit": {
    "fail_streak": 0,
    "last_count": 44,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   },
   "xAI": {
    "fail_streak": 0,
    "last_count": 296,
    "last_error": "",
-   "last_ok": "2026-11-15T09:49:16+00:00",
+   "last_ok": "2026-11-15T16:38:40+00:00",
    "seeded": true
   }
  },
@@ -8357,6 +8393,7 @@
   "07bbfbde62896391": "2026-11-14",
   "07bc6904ea8da5b2": "2026-11-14",
   "07bdf98a01e8ef06": "2026-11-14",
+  "07cb329f70737e68": "2026-11-15",
   "07cc45a4e8e02de0": "2026-11-14",
   "07d45504f8c39e85": "2026-11-14",
   "07d87d1b43fea7fa": "2026-11-14",
@@ -9797,6 +9834,7 @@
   "313dde1fb80e33f2": "2026-11-14",
   "3143501127a5f03b": "2026-11-14",
   "314e839e7c3a99db": "2026-11-14",
+  "3150d19d042d020c": "2026-11-15",
   "3164eff8e9feff29": "2026-11-14",
   "316769e3b0dc06ff": "2026-11-14",
   "3167fbaee2024b9c": "2026-11-14",
@@ -11304,6 +11342,7 @@
   "58179943d7f1a30b": "2026-11-14",
   "5831a0f3b26f70e8": "2026-11-14",
   "58330d2c4d632f10": "2026-11-14",
+  "5837f8d5b86b5e04": "2026-11-15",
   "5838134237fb5bc7": "2026-11-14",
   "5839f8a40ac53a5c": "2026-11-14",
   "583a3283632db0eb": "2026-11-14",
@@ -11814,6 +11853,7 @@
   "676a3c56e600ba2e": "2026-11-14",
   "676f0b4be50ee947": "2026-11-14",
   "67748b133507e289": "2026-11-14",
+  "677714f920bc6b77": "2026-11-15",
   "6778d7d265088a28": "2026-11-14",
   "6779117718f30efd": "2026-11-14",
   "6782742e86e2ef91": "2026-11-14",
@@ -12259,7 +12299,7 @@
   "740839cd7d3c5371": "2026-11-14",
   "7413200562700033": "2026-11-14",
   "7417a824df9b8158": "2026-11-14",
-  "742060eeb8fe9e68": "2026-11-14",
+  "742060eeb8fe9e68": "2026-11-15",
   "7425726bb5abb821": "2026-11-14",
   "74269b3ca2ec01aa": "2026-11-14",
   "742a44a9d8145514": "2026-11-14",
@@ -13024,6 +13064,7 @@
   "8a064ecce5f2d47a": "2026-11-14",
   "8a1c1df100a55afb": "2026-11-14",
   "8a21a294f1eaef60": "2026-11-14",
+  "8a29b2ea87e8a0a7": "2026-11-15",
   "8a2e2e5414411d74": "2026-11-14",
   "8a370411ce4e60be": "2026-11-14",
   "8a39b8098c397187": "2026-11-14",
@@ -13250,6 +13291,7 @@
   "903f937d0a972d56": "2026-11-14",
   "9040a2bc2ad362b1": "2026-11-14",
   "90578fdb558a6977": "2026-11-14",
+  "905deb8571a86cbf": "2026-11-15",
   "905f5e79d5394884": "2026-11-14",
   "9061f3dda105f67b": "2026-11-14",
   "9062b2375dd3f781": "2026-11-14",
@@ -14289,6 +14331,7 @@
   "ac583bc6444dd9a8": "2026-11-14",
   "ac5844f55473f672": "2026-11-14",
   "ac5936d61c6d6eb8": "2026-11-14",
+  "ac5fdaadd9bdfd51": "2026-11-15",
   "ac62332d012dc8be": "2026-11-14",
   "ac646512c0e226df": "2026-11-14",
   "ac6b7eda3e5e0e69": "2026-11-14",
@@ -14793,6 +14836,7 @@
   "baeffa42cde9179f": "2026-11-14",
   "baf1137507f7436d": "2026-11-14",
   "bafd6033f81c8dce": "2026-11-14",
+  "bb13c451da24b51a": "2026-11-15",
   "bb1972048f614e5a": "2026-11-14",
   "bb1e1f8f490788a4": "2026-11-14",
   "bb2a5cc5efdad6be": "2026-11-14",
@@ -14930,6 +14974,7 @@
   "bed7542914570008": "2026-11-14",
   "bed83eac1df46254": "2026-11-14",
   "beda477add24d7af": "2026-11-14",
+  "bedbf789b035323d": "2026-11-15",
   "bee0648c2b3fbd59": "2026-11-14",
   "bee1a86768711f5e": "2026-11-14",
   "bee760fc5de39aaa": "2026-11-14",
@@ -15503,6 +15548,7 @@
   "cf99c2d5442ef950": "2026-11-14",
   "cf99f16fee54650f": "2026-11-14",
   "cf9b871fb2029967": "2026-11-14",
+  "cfa1ab4749112669": "2026-11-15",
   "cfa4d637b50929d3": "2026-11-14",
   "cfa670ec6c9efc57": "2026-11-14",
   "cfc0c99e5f4d32ad": "2026-11-14",
@@ -15593,7 +15639,7 @@
   "d2814cbf45724cc3": "2026-11-14",
   "d2888cc6286673ae": "2026-11-14",
   "d28f3accb0d700d6": "2026-11-14",
-  "d2a20c04e212a618": "2026-11-14",
+  "d2a20c04e212a618": "2026-11-15",
   "d2a6ff948346b356": "2026-11-14",
   "d2aaf1a88e0cac09": "2026-11-14",
   "d2ac6e5a08feb6e9": "2026-11-14",
@@ -16068,6 +16114,7 @@
   "dea42cbfb4e7695b": "2026-11-14",
   "dea56abacaa1e09c": "2026-11-14",
   "deacc5c4cde68af7": "2026-11-14",
+  "deaf89d84a406fca": "2026-11-15",
   "deb6a4258e908008": "2026-11-14",
   "debfff8f1817a7c2": "2026-11-14",
   "dec4c750fe2c9857": "2026-11-14",
@@ -16415,6 +16462,7 @@
   "e80601c642f15015": "2026-11-14",
   "e81ce891ee5672fe": "2026-11-14",
   "e81d1c89574ea5cc": "2026-11-14",
+  "e81f7a8a63d89b04": "2026-11-15",
   "e820e7a035768e92": "2026-11-14",
   "e82111b7dfca2a65": "2026-11-14",
   "e82a015cf1f4cddf": "2026-11-14",
@@ -16699,6 +16747,7 @@
   "ef4c7ec768b2b317": "2026-11-14",
   "ef606c0cca75e70f": "2026-11-14",
   "ef624a4f01d50620": "2026-11-14",
+  "ef651e6e844edfa0": "2026-11-15",
   "ef77561528c405c0": "2026-11-14",
   "ef7c7281ac0dcfe0": "2026-11-14",
   "ef856f98ea6a1c29": "2026-11-14",
