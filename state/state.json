@@ -1,6 +1,6 @@
 {
  "auto": {},
- "last_report": "2026-11-14",
+ "last_report": "2026-11-15",
  "seen": {
   "AfterQuery": {
    "00cd591f-6894-4259-83b6-36c999351dde": "2026-11-15",
@@ -2032,7 +2032,8 @@
    "2826281": "2026-11-15",
    "2826340": "2026-11-15",
    "2826774": "2026-11-15",
-   "2827363": "2026-11-15"
+   "2827363": "2026-11-15",
+   "2827616": "2026-11-15"
   },
   "Google DeepMind": {
    "100032880217858758": "2026-11-15",
@@ -5424,6 +5425,7 @@
    "9e39d642-6c78-4c21-bc86-49b1773c933c": "2026-11-15",
    "9e7c3009-6a91-4927-b242-3d5aa766c722": "2026-11-15",
    "9ea666f7-9b16-481f-a16d-f533d45ca795": "2026-11-15",
+   "9eabe3b6-7d42-4bd6-85f5-919117ad8056": "2026-11-15",
    "9eb3a6a6-adff-4e82-83b6-97df514ba9bd": "2026-11-15",
    "9efcef02-0515-4672-bace-81329944b38b": "2026-11-15",
    "9f7371c4-e306-4a45-a400-aa2843fabd85": "2026-11-15",
@@ -5913,7 +5915,9 @@
    "cmwgc357m000e08l5v5n3g3rj": "2026-11-15",
    "cmwgvj3t000ec08jt5aj6qalw": "2026-11-15",
    "cmwgvq2g3000008jjj7lgrigb": "2026-11-15",
-   "cmwgyigxn000008l9j0hyvm00": "2026-11-15"
+   "cmwgyigxn000008l9j0hyvm00": "2026-11-15",
+   "cmwhg74ne000008kzgad8si61": "2026-11-15",
+   "cmwhggp0d000008jslqr1gzaf": "2026-11-15"
   },
   "Perle": {
    "03b8de8f-3ace-4acd-b6c2-8aeb9a4b3226": "2026-11-15",
@@ -7829,6 +7833,15 @@
   },
   {
    "t": "2026-11-14T22:55:52+00:00"
+  },
+  {
+   "t": "2026-11-15T09:50:50+00:00"
+  },
+  {
+   "t": "2026-11-15T09:50:50+00:00"
+  },
+  {
+   "t": "2026-11-15T09:50:50+00:00"
   }
  ],
  "sources": {
@@ -7836,42 +7849,42 @@
    "fail_streak": 0,
    "last_count": 42,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Alignerr": {
    "fail_streak": 0,
    "last_count": 60,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Alpheva": {
    "fail_streak": 0,
    "last_count": 134,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Anthropic": {
    "fail_streak": 0,
-   "last_count": 670,
+   "last_count": 668,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "AnyoneAI": {
    "fail_streak": 0,
    "last_count": 227,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Appen": {
    "fail_streak": 0,
    "last_count": 16,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Centific": {
@@ -7879,112 +7892,112 @@
    "last_count": 89,
    "last_error": "",
    "last_fail": "2026-11-14T14:03:51+00:00",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Claru": {
    "fail_streak": 0,
    "last_count": 60,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "DataForce": {
    "fail_streak": 0,
-   "last_count": 714,
+   "last_count": 715,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Google DeepMind": {
    "fail_streak": 0,
    "last_count": 159,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Gramian Consulting": {
    "fail_streak": 0,
    "last_count": 323,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Innodata": {
    "fail_streak": 0,
    "last_count": 105,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Invisible": {
    "fail_streak": 0,
    "last_count": 827,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Invisible (US)": {
    "fail_streak": 0,
    "last_count": 20,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "LILT": {
    "fail_streak": 0,
    "last_count": 452,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "LILT (kurumsal)": {
    "fail_streak": 0,
    "last_count": 23,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Lionbridge": {
    "fail_streak": 0,
    "last_count": 44,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Lionbridge AI": {
    "fail_streak": 0,
    "last_count": 48,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Mercor": {
    "fail_streak": 0,
    "last_count": 364,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Mindrift": {
    "fail_streak": 0,
-   "last_count": 2398,
+   "last_count": 2394,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "OpenAI": {
    "fail_streak": 0,
-   "last_count": 839,
+   "last_count": 840,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "OpenTrain": {
    "fail_streak": 0,
    "last_count": 185,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Perle": {
@@ -7992,84 +8005,84 @@
    "last_count": 82,
    "last_error": "",
    "last_fail": "2026-11-14T14:03:51+00:00",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Productive Playhouse": {
    "fail_streak": 0,
    "last_count": 55,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "RWS": {
    "fail_streak": 0,
    "last_count": 132,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Rise Data Labs": {
    "fail_streak": 0,
    "last_count": 119,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Sigma AI": {
    "fail_streak": 0,
    "last_count": 18,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Snorkel": {
    "fail_streak": 0,
    "last_count": 43,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Terac": {
    "fail_streak": 0,
-   "last_count": 50,
+   "last_count": 49,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "TransPerfect Community": {
    "fail_streak": 0,
    "last_count": 207,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Welo Data": {
    "fail_streak": 0,
    "last_count": 444,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "Wing Data": {
    "fail_streak": 0,
    "last_count": 390,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "iMerit": {
    "fail_streak": 0,
    "last_count": 44,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   },
   "xAI": {
    "fail_streak": 0,
    "last_count": 296,
    "last_error": "",
-   "last_ok": "2026-11-15T02:31:53+00:00",
+   "last_ok": "2026-11-15T09:49:16+00:00",
    "seeded": true
   }
  },
@@ -11276,6 +11289,7 @@
   "57d25cb20a2cad3f": "2026-11-14",
   "57d8d14a1366eee3": "2026-11-14",
   "57da5a8ac88e6d91": "2026-11-14",
+  "57dad17fa7ccc416": "2026-11-15",
   "57ea0c66cac62ae1": "2026-11-14",
   "57f03f42aeec508e": "2026-11-14",
   "57f19669b20a6783": "2026-11-14",
@@ -11311,6 +11325,7 @@
   "58a33b3200a4c843": "2026-11-14",
   "58b199a876451fcc": "2026-11-14",
   "58b416489c03d6a5": "2026-11-14",
+  "58c60b44b9cbae84": "2026-11-15",
   "58cbea1aede2ac2e": "2026-11-14",
   "58ce3eaa912fdcfc": "2026-11-14",
   "58dae2c8cbb531be": "2026-11-14",
@@ -11933,6 +11948,7 @@
   "6b1988fc3b7f58c4": "2026-11-14",
   "6b1dfd407fc22915": "2026-11-14",
   "6b2106dfb90d639d": "2026-11-14",
+  "6b25e1364bfaa40a": "2026-11-15",
   "6b274fdfe4db8d45": "2026-11-14",
   "6b2d99460de365ef": "2026-11-14",
   "6b350c9128418175": "2026-11-14",
@@ -16486,7 +16502,7 @@
   "ea934687812bbf7c": "2026-11-14",
   "ea95afcc8cea9178": "2026-11-14",
   "ea9720ee22b3e523": "2026-11-14",
-  "ea9dd98645dde1d3": "2026-11-14",
+  "ea9dd98645dde1d3": "2026-11-15",
   "eaa14a7d72529ee5": "2026-11-14",
   "eaa5090278a60273": "2026-11-14",
   "eaa9ea8dbae3345b": "2026-11-14",
