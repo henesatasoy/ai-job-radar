@@ -1,6 +1,6 @@
 {
  "auto": {},
- "last_report": "2026-11-21",
+ "last_report": "2026-11-22",
  "seen": {
   "AfterQuery": {
    "00cd591f-6894-4259-83b6-36c999351dde": "2026-11-22",
@@ -2295,7 +2295,7 @@
    "123673075999744710": "2026-11-22",
    "123677111926825670": "2026-11-22",
    "124093064477057734": "2026-11-22",
-   "124548522136478406": "2026-11-21",
+   "124548522136478406": "2026-11-22",
    "124901724409209542": "2026-11-22",
    "124995998941356742": "2026-11-22",
    "125832162501894854": "2026-11-22",
@@ -4450,6 +4450,7 @@
    "/jobs/list_AAABodwhSO6KHR7Vl4tALZJa/cmc-manufacturing-quality-expert": "2026-11-22",
    "/jobs/list_AAABodwhWFi4jOyOolVBaJGw/medical-affairs-commercial-expert": "2026-11-22",
    "/jobs/list_AAABodwhbMXQuKR3sa9LBqVq/drug-discovery-translational-science-expert": "2026-11-22",
+   "/jobs/list_AAABoe5-EDcz8NJf_69EcIgl/voice-actor-cx-agent-voice-cloning-dutch": "2026-11-22",
    "/jobs/list_AAABoeIksoinQkS__UxOZ7G1/ai-evaluation-rubric-reviewer": "2026-11-18",
    "/jobs/list_AAABoeaZZ5aPp9cXNF9DVrUb/ai-evaluation-rubric-auditor": "2026-11-22",
    "/jobs/list_AAABoeb5OZKJV5XRwMBNPbUW/finance-expert-fp-a-emea": "2026-11-22",
@@ -7009,7 +7010,8 @@
    "cmwpf3vxs001s07jp20dtwqxg": "2026-11-22",
    "cmwpf3w2w001u07jp1h4gecet": "2026-11-22",
    "cmwpf3w7n001w07jplttgqphd": "2026-11-22",
-   "cmwq31i9j000008jpqs54o4dr": "2026-11-22"
+   "cmwq31i9j000008jpqs54o4dr": "2026-11-22",
+   "cmwrcio56000008l1358fpsp3": "2026-11-22"
   },
   "Perle": {
    "03b8de8f-3ace-4acd-b6c2-8aeb9a4b3226": "2026-11-22",
@@ -9270,49 +9272,49 @@
    "fail_streak": 0,
    "last_count": 41,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Alignerr": {
    "fail_streak": 0,
    "last_count": 60,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Alpheva": {
    "fail_streak": 0,
    "last_count": 134,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Anthropic": {
    "fail_streak": 0,
    "last_count": 635,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "AnyoneAI": {
    "fail_streak": 0,
    "last_count": 227,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Appen": {
    "fail_streak": 0,
    "last_count": 0,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Centific": {
-   "fail_streak": 2,
+   "fail_streak": 3,
    "last_count": 45,
    "last_error": "RetryError: HTTPSConnectionPool(host='centific.wd1.myworkdayjobs.com', port=443): Max retries exceeded with url: /wday/cxs/centific/Centific_Global/jobs (Caused by ResponseError('too many 429 error responses'))",
-   "last_fail": "2026-11-22T01:42:13+00:00",
+   "last_fail": "2026-11-22T08:53:46+00:00",
    "last_ok": "2026-11-21T16:26:33+00:00",
    "seeded": true
   },
@@ -9320,105 +9322,105 @@
    "fail_streak": 0,
    "last_count": 60,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "DataForce": {
    "fail_streak": 0,
    "last_count": 776,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Google DeepMind": {
    "fail_streak": 0,
-   "last_count": 161,
+   "last_count": 162,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Gramian Consulting": {
    "fail_streak": 0,
    "last_count": 327,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Innodata": {
    "fail_streak": 0,
    "last_count": 107,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Invisible": {
    "fail_streak": 0,
    "last_count": 827,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Invisible (US)": {
    "fail_streak": 0,
    "last_count": 21,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "LILT": {
    "fail_streak": 0,
    "last_count": 453,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "LILT (kurumsal)": {
    "fail_streak": 0,
    "last_count": 22,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Lionbridge": {
    "fail_streak": 0,
    "last_count": 46,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Lionbridge AI": {
    "fail_streak": 0,
    "last_count": 12,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Mercor": {
    "fail_streak": 0,
-   "last_count": 368,
+   "last_count": 365,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Mindrift": {
    "fail_streak": 0,
    "last_count": 2057,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "OpenAI": {
    "fail_streak": 0,
    "last_count": 852,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "OpenTrain": {
    "fail_streak": 0,
    "last_count": 186,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Perle": {
@@ -9426,84 +9428,84 @@
    "last_count": 86,
    "last_error": "",
    "last_fail": "2026-11-14T14:03:51+00:00",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Productive Playhouse": {
    "fail_streak": 0,
    "last_count": 54,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "RWS": {
    "fail_streak": 0,
    "last_count": 147,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Rise Data Labs": {
    "fail_streak": 0,
    "last_count": 125,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Sigma AI": {
    "fail_streak": 0,
    "last_count": 16,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Snorkel": {
    "fail_streak": 0,
    "last_count": 43,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Terac": {
    "fail_streak": 0,
-   "last_count": 53,
+   "last_count": 52,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "TransPerfect Community": {
    "fail_streak": 0,
    "last_count": 216,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Welo Data": {
    "fail_streak": 0,
    "last_count": 462,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "Wing Data": {
    "fail_streak": 0,
    "last_count": 391,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "iMerit": {
    "fail_streak": 0,
    "last_count": 47,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   },
   "xAI": {
    "fail_streak": 0,
    "last_count": 299,
    "last_error": "",
-   "last_ok": "2026-11-22T01:42:13+00:00",
+   "last_ok": "2026-11-22T08:53:46+00:00",
    "seeded": true
   }
  },
@@ -18817,6 +18819,7 @@
   "f1d7e2309ca05f80": "2026-11-14",
   "f1dbf3e7464f1479": "2026-11-14",
   "f1dd5b44852f7e4d": "2026-11-14",
+  "f1e7a76965ddfea9": "2026-11-22",
   "f1f04410b6826cf5": "2026-11-14",
   "f1f050c1d267c19c": "2026-11-14",
   "f1f2830deeba0010": "2026-11-19",
@@ -19299,6 +19302,7 @@
   "fed3347938ca91c6": "2026-11-14",
   "fed7e79cdc4d5d99": "2026-11-14",
   "fee16bd1a0ae867a": "2026-11-14",
+  "fefe4095c9f3d4c3": "2026-11-22",
   "ff03b63217b1e278": "2026-11-14",
   "ff089c9950dd18b4": "2026-11-14",
   "ff15964474c990ef": "2026-11-17",
