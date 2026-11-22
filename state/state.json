@@ -997,7 +997,10 @@
    "5490974008": "2026-11-22",
    "5490976008": "2026-11-22",
    "5490978008": "2026-11-22",
-   "5490979008": "2026-11-22"
+   "5490979008": "2026-11-22",
+   "5491573008": "2026-11-22",
+   "5491575008": "2026-11-22",
+   "5491578008": "2026-11-22"
   },
   "AnyoneAI": {
    "/jobs/00d01f25-b22d-49e0-a21c-03839c58107b": "2026-11-22",
@@ -6234,6 +6237,7 @@
    "66fa2750-ca23-4a3e-8970-dfe7bac97d01": "2026-11-22",
    "673ca4f5-b5dc-448f-be3c-4f888a6d13ed": "2026-11-22",
    "6742bd76-dcc7-4bbd-bdb3-00c315bc0254": "2026-11-22",
+   "6785d983-8831-46d0-9c81-443f83664948": "2026-11-22",
    "67c67c36-e710-4f21-bd9c-759eb72cfabf": "2026-11-22",
    "67c8b37d-f856-4edf-adb7-1a5b0d07f6b3": "2026-11-22",
    "67eb66cd-d89e-4312-a2cf-59e9a0a5e43f": "2026-11-17",
@@ -6285,6 +6289,7 @@
    "73a111f9-e83d-4cce-9148-2a32ccf1d251": "2026-11-22",
    "73e56947-5d8b-414d-a0ac-9dc9b04e2406": "2026-11-22",
    "73fdf2c0-4318-4b13-addc-b66bc1308ba4": "2026-11-18",
+   "740b5d1b-f63d-49bb-962d-8e2778e925ef": "2026-11-22",
    "7447dd43-9bf5-445f-bb8c-ba57756c8d04": "2026-11-22",
    "744844e1-f426-463c-b615-91823f0cd867": "2026-11-22",
    "7472e486-0aa6-4f9d-86da-2105a42b2dce": "2026-11-22",
@@ -6548,6 +6553,7 @@
    "bbf8d3b8-2f8f-49f8-9f35-73c7847647f7": "2026-11-22",
    "bc059a72-8ff3-4a80-a499-5b82ccca1f05": "2026-11-22",
    "bc80a3ae-1e69-4a8d-8366-77fcdd56ff61": "2026-11-22",
+   "bc85c1a9-0f75-4c3a-807b-6d2bb26c8445": "2026-11-22",
    "bd1ac97f-20f9-4727-9f92-7064035a416f": "2026-11-22",
    "bd2b8228-bb0f-42e0-94bd-c853cdd56140": "2026-11-22",
    "be7abbba-bca2-4baa-b7d8-98d5ab514520": "2026-11-22",
@@ -6610,6 +6616,7 @@
    "cce31320-258d-4a2f-96f7-6782208d5db6": "2026-11-22",
    "cd3c9c99-9527-4ba2-bea7-9f8f4892bc62": "2026-11-22",
    "cda6eab0-edab-4dfc-8923-40ca3b0928b5": "2026-11-22",
+   "ce15d226-65db-43f1-98ec-078e96a3a281": "2026-11-22",
    "ceca6916-b8d8-42cc-a32a-c27e06744b31": "2026-11-22",
    "ceef522f-2ee2-49c7-b3a0-2a227e759a72": "2026-11-22",
    "cf0516c9-5227-4d7c-a8e9-219a4ac52422": "2026-11-22",
@@ -6623,6 +6630,7 @@
    "d089cc3e-e81e-42b7-be77-23bbc9d02431": "2026-11-22",
    "d0da9c00-a65b-49be-9ebf-a55c32642540": "2026-11-22",
    "d134caf2-907c-4c85-be2d-fad477d2b425": "2026-11-22",
+   "d1906ab2-b829-4a13-b1f2-f4af97d699fa": "2026-11-22",
    "d1c6cb87-a44d-4d04-92a8-dc40eccd090e": "2026-11-22",
    "d1e4178d-8eb6-4727-9601-e230cb96eeee": "2026-11-22",
    "d1f21456-f0bf-48ad-bb8d-ae0020a10600": "2026-11-22",
@@ -6724,6 +6732,7 @@
    "ec317080-e2d2-4a73-93e6-e0a9ae6fdf96": "2026-11-22",
    "ec5a5d98-6314-44d9-9466-8d4d7ee866f6": "2026-11-22",
    "ecb1119c-0439-4b8d-938b-851b3ed84a02": "2026-11-22",
+   "ecfe655c-1369-4bcd-aae0-4a3b75fdf61b": "2026-11-22",
    "ed9255f0-981f-49e9-8b01-9fd203141929": "2026-11-22",
    "eda0d516-94bd-4257-9679-aded0d709fba": "2026-11-22",
    "eda4a2d1-682f-418e-8055-222eaf7c9abd": "2026-11-22",
@@ -7012,7 +7021,8 @@
    "cmwpf3w2w001u07jp1h4gecet": "2026-11-22",
    "cmwpf3w7n001w07jplttgqphd": "2026-11-22",
    "cmwq31i9j000008jpqs54o4dr": "2026-11-22",
-   "cmwrcio56000008l1358fpsp3": "2026-11-22"
+   "cmwrcio56000008l1358fpsp3": "2026-11-22",
+   "cmws9q70w000008jo3v49l1yj": "2026-11-22"
   },
   "Perle": {
    "03b8de8f-3ace-4acd-b6c2-8aeb9a4b3226": "2026-11-22",
@@ -9266,6 +9276,9 @@
   },
   {
    "t": "2026-11-21T08:54:37+00:00"
+  },
+  {
+   "t": "2026-11-22T22:24:23+00:00"
   }
  ],
  "sources": {
@@ -9273,49 +9286,49 @@
    "fail_streak": 0,
    "last_count": 41,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Alignerr": {
    "fail_streak": 0,
    "last_count": 60,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Alpheva": {
    "fail_streak": 0,
    "last_count": 134,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Anthropic": {
    "fail_streak": 0,
-   "last_count": 633,
+   "last_count": 636,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "AnyoneAI": {
    "fail_streak": 0,
    "last_count": 227,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Appen": {
    "fail_streak": 0,
    "last_count": 0,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Centific": {
-   "fail_streak": 4,
+   "fail_streak": 5,
    "last_count": 45,
    "last_error": "RetryError: HTTPSConnectionPool(host='centific.wd1.myworkdayjobs.com', port=443): Max retries exceeded with url: /wday/cxs/centific/Centific_Global/jobs (Caused by ResponseError('too many 429 error responses'))",
-   "last_fail": "2026-11-22T17:02:58+00:00",
+   "last_fail": "2026-11-22T22:24:17+00:00",
    "last_ok": "2026-11-21T16:26:33+00:00",
    "seeded": true
   },
@@ -9323,105 +9336,105 @@
    "fail_streak": 0,
    "last_count": 60,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "DataForce": {
    "fail_streak": 0,
    "last_count": 776,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Google DeepMind": {
    "fail_streak": 0,
-   "last_count": 162,
+   "last_count": 161,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Gramian Consulting": {
    "fail_streak": 0,
    "last_count": 327,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Innodata": {
    "fail_streak": 0,
    "last_count": 107,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Invisible": {
    "fail_streak": 0,
    "last_count": 827,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Invisible (US)": {
    "fail_streak": 0,
    "last_count": 21,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "LILT": {
    "fail_streak": 0,
    "last_count": 453,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "LILT (kurumsal)": {
    "fail_streak": 0,
    "last_count": 22,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Lionbridge": {
    "fail_streak": 0,
    "last_count": 46,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Lionbridge AI": {
    "fail_streak": 0,
    "last_count": 12,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Mercor": {
    "fail_streak": 0,
    "last_count": 362,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Mindrift": {
    "fail_streak": 0,
    "last_count": 2057,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "OpenAI": {
    "fail_streak": 0,
    "last_count": 852,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "OpenTrain": {
    "fail_streak": 0,
    "last_count": 186,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Perle": {
@@ -9429,84 +9442,84 @@
    "last_count": 86,
    "last_error": "",
    "last_fail": "2026-11-14T14:03:51+00:00",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Productive Playhouse": {
    "fail_streak": 0,
    "last_count": 54,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "RWS": {
    "fail_streak": 0,
    "last_count": 147,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Rise Data Labs": {
    "fail_streak": 0,
    "last_count": 125,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Sigma AI": {
    "fail_streak": 0,
    "last_count": 16,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Snorkel": {
    "fail_streak": 0,
    "last_count": 43,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Terac": {
    "fail_streak": 0,
    "last_count": 52,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "TransPerfect Community": {
    "fail_streak": 0,
    "last_count": 216,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Welo Data": {
    "fail_streak": 0,
    "last_count": 462,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "Wing Data": {
    "fail_streak": 0,
    "last_count": 391,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "iMerit": {
    "fail_streak": 0,
    "last_count": 47,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   },
   "xAI": {
    "fail_streak": 0,
    "last_count": 299,
    "last_error": "",
-   "last_ok": "2026-11-22T17:02:58+00:00",
+   "last_ok": "2026-11-22T22:24:17+00:00",
    "seeded": true
   }
  },
@@ -10033,7 +10046,7 @@
   "0dc5f001f97c1c46": "2026-11-14",
   "0dc97df3c747d82f": "2026-11-14",
   "0dca73de6ee02f23": "2026-11-14",
-  "0dd01901608f66f4": "2026-11-14",
+  "0dd01901608f66f4": "2026-11-22",
   "0dd50ed6ae3ff246": "2026-11-18",
   "0de379ec7895cb9a": "2026-11-14",
   "0deecd681175a41c": "2026-11-14",
@@ -10398,7 +10411,7 @@
   "184854b2ae4e35da": "2026-11-14",
   "184a6cc25777ff9e": "2026-11-14",
   "184a85efe52e9a9d": "2026-11-14",
-  "185702fcc1b4e187": "2026-11-14",
+  "185702fcc1b4e187": "2026-11-22",
   "185bf0c4e182d3e1": "2026-11-14",
   "18612c1f18a1f136": "2026-11-14",
   "1864ea54c43c6c6d": "2026-11-14",
@@ -12384,6 +12397,7 @@
   "49fcda9839e2a20b": "2026-11-14",
   "49fe2a83f9f9c527": "2026-11-14",
   "4a00d1ca00c4ba84": "2026-11-14",
+  "4a061e03edbfc240": "2026-11-22",
   "4a0815ad1b6b3646": "2026-11-14",
   "4a13005b6ca1aa84": "2026-11-14",
   "4a16cf9dada67674": "2026-11-14",
@@ -13255,7 +13269,7 @@
   "60b5bfb82b53ae07": "2026-11-14",
   "60be582c1250fc38": "2026-11-21",
   "60c82c5b05700821": "2026-11-20",
-  "60ccb81bcd535b46": "2026-11-14",
+  "60ccb81bcd535b46": "2026-11-22",
   "60e0143550ab06cd": "2026-11-14",
   "60eb0cb2a706ec9b": "2026-11-14",
   "60ef9b123a45df14": "2026-11-14",
@@ -14006,7 +14020,7 @@
   "749599b966c4b6ad": "2026-11-20",
   "74a039c7aaef9f4b": "2026-11-14",
   "74a71294f37a1400": "2026-11-14",
-  "74ae497d36dbc776": "2026-11-14",
+  "74ae497d36dbc776": "2026-11-22",
   "74caa97adbc871f5": "2026-11-14",
   "74cbe2b0230263c4": "2026-11-14",
   "74dd0200513fb654": "2026-11-14",
@@ -14653,6 +14667,7 @@
   "865b2e6bef131208": "2026-11-14",
   "865d5ee000564623": "2026-11-14",
   "866040296d0ebdfd": "2026-11-14",
+  "866503fc40083482": "2026-11-22",
   "8669db0ddf682cc8": "2026-11-14",
   "86702a79451da2e6": "2026-11-14",
   "86710b8470800d43": "2026-11-14",
@@ -14899,6 +14914,7 @@
   "8ca997bcb07787a9": "2026-11-14",
   "8cab405705110e7c": "2026-11-14",
   "8cacc986bb66ca3c": "2026-11-17",
+  "8caf7753d68f1688": "2026-11-22",
   "8cb5b65367d4352d": "2026-11-14",
   "8cbce8c69b6db8df": "2026-11-14",
   "8cc96a86efc156f4": "2026-11-20",
@@ -16857,6 +16873,7 @@
   "bf0b9ded5112f11a": "2026-11-14",
   "bf0ef99a187a3154": "2026-11-14",
   "bf1520e4cb1ebd25": "2026-11-14",
+  "bf1d63f0838a6b6b": "2026-11-22",
   "bf1dae2fb997cc1d": "2026-11-19",
   "bf1e2df84cef4658": "2026-11-14",
   "bf2240ad3ad34562": "2026-11-14",
@@ -17050,6 +17067,7 @@
   "c47db8a85df04912": "2026-11-14",
   "c48056dfab99373e": "2026-11-14",
   "c4817ccd67a0d928": "2026-11-14",
+  "c4833bf0ce3125b7": "2026-11-22",
   "c48c43b5c0ebbf86": "2026-11-14",
   "c4949cd6ab6e4607": "2026-11-14",
   "c4966e49f578f0f0": "2026-11-19",
@@ -18940,6 +18958,7 @@
   "f4f7797bf8d5638c": "2026-11-14",
   "f4feaeca3b25c9d4": "2026-11-14",
   "f50a756f30acbb52": "2026-11-14",
+  "f514ba4cdbe9881d": "2026-11-22",
   "f525462457ed5928": "2026-11-14",
   "f527bcf5ef65901d": "2026-11-20",
   "f52e4aa936ee3143": "2026-11-14",
